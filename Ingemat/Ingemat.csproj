@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B275EF1F-6A9A-40F2-B6E6-761A5FADC3CE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Ingemat</RootNamespace>
+    <AssemblyName>Ingemat</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="G_AprobarOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_AprobarOS.Designer.cs">
+      <DependentUpon>G_AprobarOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="G_Facturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_Facturas.Designer.cs">
+      <DependentUpon>G_Facturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="G_VerFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_VerFactura.Designer.cs">
+      <DependentUpon>G_VerFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="G_VistaOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_VistaOS.Designer.cs">
+      <DependentUpon>G_VistaOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_Actividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T_Actividades.Designer.cs">
+      <DependentUpon>T_Actividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="T_RealizarActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="T_RealizarActividad.Designer.cs">
+      <DependentUpon>T_RealizarActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V_NuevaFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V_NuevaFactura.Designer.cs">
+      <DependentUpon>V_NuevaFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V_Facturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V_Facturas.Designer.cs">
+      <DependentUpon>V_Facturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V_Proformas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V_Proformas.Designer.cs">
+      <DependentUpon>V_Proformas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="G_Empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_Empleados.Designer.cs">
+      <DependentUpon>G_Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="G_OrdenTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_OrdenTrabajo.Designer.cs">
+      <DependentUpon>G_OrdenTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V_OrdenServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V_OrdenServicio.Designer.cs">
+      <DependentUpon>V_OrdenServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V_NuevaProforma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V_NuevaProforma.Designer.cs">
+      <DependentUpon>V_NuevaProforma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="G_Formatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_Formatos.Designer.cs">
+      <DependentUpon>G_Formatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="G_Proyectos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_Proyectos.Designer.cs">
+      <DependentUpon>G_Proyectos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V_NuevaOrdenServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V_NuevaOrdenServicio.Designer.cs">
+      <DependentUpon>V_NuevaOrdenServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="V_VerFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V_VerFactura.Designer.cs">
+      <DependentUpon>V_VerFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V_VistaOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V_VistaOS.Designer.cs">
+      <DependentUpon>V_VistaOS.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="G_AprobarOS.resx">
+      <DependentUpon>G_AprobarOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="G_Facturas.resx">
+      <DependentUpon>G_Facturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="G_VerFactura.resx">
+      <DependentUpon>G_VerFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="G_VistaOS.resx">
+      <DependentUpon>G_VistaOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T_Actividades.resx">
+      <DependentUpon>T_Actividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="T_RealizarActividad.resx">
+      <DependentUpon>T_RealizarActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="V_Facturas.resx">
+      <DependentUpon>V_Facturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="V_NuevaFactura.resx">
+      <DependentUpon>V_NuevaFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="V_Proformas.resx">
+      <DependentUpon>V_Proformas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="G_Empleados.resx">
+      <DependentUpon>G_Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="G_OrdenTrabajo.resx">
+      <DependentUpon>G_OrdenTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="V_OrdenServicio.resx">
+      <DependentUpon>V_OrdenServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="V_NuevaProforma.resx">
+      <DependentUpon>V_NuevaProforma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="G_Formatos.resx">
+      <DependentUpon>G_Formatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="G_Proyectos.resx">
+      <DependentUpon>G_Proyectos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="V_NuevaOrdenServicio.resx">
+      <DependentUpon>V_NuevaOrdenServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="V_VerFactura.resx">
+      <DependentUpon>V_VerFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="V_VistaOS.resx">
+      <DependentUpon>V_VistaOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
+      <Project>{581169db-89f4-4e57-9a69-47ea44c3377e}</Project>
+      <Name>CapaEntidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
+      <Project>{4d755722-aac0-4034-9055-eaf02967ad93}</Project>
+      <Name>CapaLogica</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
