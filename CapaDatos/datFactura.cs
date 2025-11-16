@@ -97,27 +97,23 @@ namespace CapaDatos
 
                         if (filas == 0)
                         {
-                            // Si SQL no insertó filas (por trigger o similar)
                             throw new Exception("ERROR DE BASE DE DATOS: La operación SQL no insertó ninguna fila.");
                         }
 
-                        return true; // Éxito
+                        return true; 
                     }
                 }
                 catch (SqlException ex)
                 {
-                    // Esto capturará errores de FK, UNIQUE, etc., y los reenviará al formulario
                     throw new Exception("ERROR SQL: " + ex.Message);
                 }
                 catch (Exception ex)
                 {
-                    // Capturará cualquier otro error
                     throw new Exception("ERROR INESPERADO: " + ex.Message);
                 }
             }
         }
 
-        // También actualiza EditarFactura por si acaso
         public bool EditarFactura(entFactura fac)
         {
             using (SqlConnection cn = Conexion.Instancia.Conectar())

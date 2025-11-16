@@ -63,7 +63,6 @@ namespace CapaLogica
                     break;
             }
 
-            // 3. Si el acceso es correcto, guardamos la sesión
             if (accesoConcedido)
             {
                 entSession.NombreEmpleado = nombreCompleto;
@@ -71,7 +70,7 @@ namespace CapaLogica
                 return true;
             }
 
-            return false; // Contraseña incorrecta
+            return false;
         }
     }
 }

@@ -47,7 +47,11 @@
     <Compile Include="datEmpleado.cs" />
     <Compile Include="datFactura.cs" />
     <Compile Include="datFormatos.cs" />
+    <Compile Include="datGastoAdicional.cs" />
+    <Compile Include="datGastosProf.cs" />
+    <Compile Include="datProforma.cs" />
     <Compile Include="datSubFormatos.cs" />
+    <Compile Include="datTipoGasto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

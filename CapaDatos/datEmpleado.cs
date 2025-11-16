@@ -28,7 +28,6 @@ namespace CapaDatos
                 }
                 catch (Exception ex)
                 {
-                    // Manejar el error (por ejemplo, registrar en un log)
                     Console.WriteLine("Error en datEmpleado.ListarEmpleados: " + ex.Message);
                 }
             }

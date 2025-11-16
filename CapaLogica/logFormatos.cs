@@ -14,22 +14,19 @@ namespace CapaLogica
     {
         private datFormatos datos = new datFormatos();
 
-        // Listar los formatos según la categoría seleccionada
         public List<Formato> ListarFormatos(int idCategoria)
         {
-            return datos.ObtenerFormatos(idCategoria); // Llama a la capa de datos para obtener los formatos
+            return datos.ObtenerFormatos(idCategoria); 
         }
 
-        // Insertar un nuevo formato
         public bool InsertarFormato(Formato formato)
         {
-            // Regla de negocio: Verificar que el nombre no esté vacío y el precio sea válido
             if (string.IsNullOrWhiteSpace(formato.NomFormato) || formato.PrecioFormato <= 0)
             {
-                return false; // No se puede insertar si el nombre está vacío o el precio es no válido
+                return false; 
             }
 
-            datos.AgregarFormato(formato); // Llama a la capa de datos para agregar el formato
+            datos.AgregarFormato(formato); 
             return true;
         }
     }

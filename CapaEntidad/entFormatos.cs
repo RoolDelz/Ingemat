@@ -12,6 +12,10 @@ namespace CapaEntidad
         {
             public int IdCategoria { get; set; }
             public string NomCategoria { get; set; }
+            public override string ToString()
+            {
+                return NomCategoria;
+            }
         }
 
         public class Formato
@@ -20,6 +24,10 @@ namespace CapaEntidad
             public string NomFormato { get; set; }
             public decimal PrecioFormato { get; set; }
             public int IdCategoria { get; set; }
+            public override string ToString()
+            {
+                return NomFormato;
+            }
         }
 
         public class SubFormato

@@ -10,14 +10,11 @@ namespace CapaDatos
 {
     public class datCategorias
     {
-        // Usamos la instancia de Conexion para obtener la conexión
         private readonly Conexion conexion = Conexion.Instancia;
 
-        // Obtener todas las categorías
         public List<Categoria> ObtenerCategorias()
         {
             List<Categoria> categorias = new List<Categoria>();
-
             using (SqlConnection conn = conexion.Conectar())
             {
                 conn.Open();

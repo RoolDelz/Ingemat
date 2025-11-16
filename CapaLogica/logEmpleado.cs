@@ -20,23 +20,19 @@ namespace CapaLogica
 
         public bool InsertarEmpleado(entEmpleado emp)
         {
-            // --- Ejemplo de Regla de Negocio ---
             if (string.IsNullOrWhiteSpace(emp.NombreEmpleado) || string.IsNullOrWhiteSpace(emp.Dni))
             {
-                // No inserta si los campos clave están vacíos
                 return false;
             }
-            // (Aquí podrías añadir una lógica para verificar DNI duplicado antes de insertar)
 
             return datos.InsertarEmpleado(emp);
         }
 
         public bool EditarEmpleado(entEmpleado emp)
         {
-            // --- Ejemplo de Regla de Negocio ---
             if (emp.IdEmpleado == 0)
             {
-                return false; // No se puede editar un empleado sin ID
+                return false; 
             }
 
             return datos.EditarEmpleado(emp);
@@ -45,7 +41,7 @@ namespace CapaLogica
         {
             if (string.IsNullOrWhiteSpace(dni) || dni.Length < 8)
             {
-                return null; // Regla de negocio: DNI no puede estar vacío o ser inválido
+                return null;
             }
             return datos.BuscarEmpleadoPorDni(dni);
         }

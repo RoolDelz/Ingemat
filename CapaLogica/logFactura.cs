@@ -25,7 +25,6 @@ namespace CapaLogica
 
         public bool InsertarFactura(entFactura fac)
         {
-            // --- ESTE ES EL CÓDIGO QUE TE FALTA ---
             if (string.IsNullOrWhiteSpace(fac.NumFactura))
             {
                 throw new Exception("RECHAZADO: El campo Código (NumFactura) está vacío.");
@@ -42,12 +41,10 @@ namespace CapaLogica
             {
                 throw new Exception("RECHAZADO: El Estado no está seleccionado.");
             }
-            // --- FIN DEL BLOQUE ---
 
             return datos.InsertarFactura(fac);
         }
 
-        // Añade también la excepción para Editar
         public bool EditarFactura(entFactura fac)
         {
             if (string.IsNullOrWhiteSpace(fac.NumFactura) || fac.IdFactura == 0)

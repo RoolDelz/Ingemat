@@ -41,14 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="entCategoria.cs" />
     <Compile Include="entCliente.cs" />
     <Compile Include="entEmpleado.cs" />
     <Compile Include="entFactura.cs" />
+    <Compile Include="entGastoAdicional.cs" />
+    <Compile Include="entGastoProf.cs" />
+    <Compile Include="entProforma.cs" />
     <Compile Include="entSession.cs" />
     <Compile Include="entSubFormato.cs" />
     <Compile Include="entFormatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="entTipoGasto.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

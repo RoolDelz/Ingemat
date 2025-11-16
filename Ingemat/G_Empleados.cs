@@ -28,15 +28,15 @@ namespace Ingemat
         }
         private void EstadoInicial()
         {
-            HabilitarControles(false); // Deshabilita campos de edición
+            HabilitarControles(false); 
             LimpiarControles();
 
-            txtEDni.Enabled = true; // Solo el DNI para buscar
+            txtEDni.Enabled = true; 
             btnEBuscar.Enabled = true;
             btnEAgregar.Enabled = true;
             dgvEmpleados.Enabled = true;
 
-            btnEEditar.Enabled = false; // Deshabilitados hasta seleccionar
+            btnEEditar.Enabled = false; 
             btnEGuardar.Enabled = false;
             btnECancelar.Enabled = false;
 
@@ -44,27 +44,24 @@ namespace Ingemat
             idEmpleadoSeleccionado = 0;
         }
 
-        // Habilita o deshabilita los campos de datos
         private void HabilitarControles(bool habilitar)
         {
             txtENombres.Enabled = habilitar;
             txtETelefono.Enabled = habilitar;
             txtECorreo.Enabled = habilitar;
-            cmbECargo.Enabled = habilitar; // Asumiendo que es cmbCargo
+            cmbECargo.Enabled = habilitar; 
             chkEstado.Enabled = habilitar;
 
-            // Si habilitamos controles, el DNI se bloquea (no se edita)
             if (habilitar && !esNuevo)
             {
                 txtEDni.Enabled = false;
             }
             else
             {
-                txtEDni.Enabled = habilitar; // Habilitado para MODO NUEVO
+                txtEDni.Enabled = habilitar; 
             }
         }
 
-        // Limpia todos los campos
         private void LimpiarControles()
         {
             txtEDni.Text = "";
@@ -72,10 +69,9 @@ namespace Ingemat
             txtETelefono.Text = "";
             txtECorreo.Text = "";
             cmbECargo.SelectedIndex = -1;
-            chkEstado.Checked = true; // Por defecto
+            chkEstado.Checked = true; 
         }
 
-        // Carga el DataGridView
         private void ListarEmpleadosGrid()
         {
             dgvEmpleados.DataSource = logica.ListarEmpleados();
@@ -85,7 +81,6 @@ namespace Ingemat
             }
         }
 
-        // Carga los datos de un objeto Empleado en el formulario
         private void CargarDatosFormulario(entEmpleado emp)
         {
             if (emp == null) return;
@@ -97,7 +92,6 @@ namespace Ingemat
             cmbECargo.Text = emp.Cargo;
             chkEstado.Checked = emp.Estado;
 
-            // --- Lógica para separar Nombres y Apellidos ---
             string nombreCompleto = emp.NombreEmpleado;
             int primerEspacio = nombreCompleto.IndexOf(' ');
 
@@ -110,19 +104,15 @@ namespace Ingemat
                 txtENombres.Text = nombreCompleto;
             }
 
-            // Habilitamos el botón Editar
             btnEEditar.Enabled = true;
         }
 
-        // Seleccionar desde el Grid
         private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Asegurarse de que no sea el header
+            if (e.RowIndex >= 0) 
             {
-                // Obtenemos el DNI de la fila seleccionada
                 string dni = dgvEmpleados.Rows[e.RowIndex].Cells["Dni"].Value.ToString();
 
-                // Usamos la lógica de búsqueda para cargar los datos
                 entEmpleado emp = logica.BuscarEmpleadoPorDni(dni);
                 if (emp != null)
                 {
@@ -131,59 +121,50 @@ namespace Ingemat
             }
         }
 
-        // MODO NUEVO
         private void btnEAgregar_Click(object sender, EventArgs e)
         {
             esNuevo = true;
             HabilitarControles(true);
             LimpiarControles();
 
-            // Deshabilitamos los botones de navegación/selección
             btnEBuscar.Enabled = false;
             btnEAgregar.Enabled = false;
             btnEEditar.Enabled = false;
             dgvEmpleados.Enabled = false;
 
-            // Habilitamos los botones de acción
             btnEGuardar.Enabled = true;
             btnECancelar.Enabled = true;
 
-            txtENombres.Focus(); // Mover el cursor al primer campo
+            txtENombres.Focus(); 
         }
 
-        // MODO EDICIÓN
         private void btnEEditar_Click(object sender, EventArgs e)
         {
             esNuevo = false;
-            HabilitarControles(true); // Habilita campos
+            HabilitarControles(true);
 
-            // Deshabilitamos los botones de navegación/selección
             btnEBuscar.Enabled = false;
             btnEAgregar.Enabled = false;
             btnEEditar.Enabled = false;
             dgvEmpleados.Enabled = false;
 
-            // Habilitamos los botones de acción
             btnEGuardar.Enabled = true;
             btnECancelar.Enabled = true;
 
             txtENombres.Focus();
         }
 
-        // CANCELAR (Modo Nuevo o Edición)
         private void btnECancelar_Click(object sender, EventArgs e)
         {
-            EstadoInicial(); // Simplemente resetea el formulario
+            EstadoInicial();
         }
 
-        // GUARDAR (para Nuevo o Edición)
         private void btnEGuardar_Click(object sender, EventArgs e)
         {
             try
             {
                 entEmpleado emp = new entEmpleado();
 
-                // --- Lógica para unir Nombres y Apellidos ---
                 emp.NombreEmpleado = $"{txtENombres.Text.Trim()}".Trim();
 
                 emp.Dni = txtEDni.Text.Trim();
@@ -196,7 +177,6 @@ namespace Ingemat
 
                 if (esNuevo)
                 {
-                    // INSERTAR
                     resultado = logica.InsertarEmpleado(emp);
                     if (resultado)
                     {
@@ -205,8 +185,7 @@ namespace Ingemat
                 }
                 else
                 {
-                    // EDITAR
-                    emp.IdEmpleado = idEmpleadoSeleccionado; // Usamos el ID guardado
+                    emp.IdEmpleado = idEmpleadoSeleccionado;
                     resultado = logica.EditarEmpleado(emp);
                     if (resultado)
                     {
@@ -217,7 +196,7 @@ namespace Ingemat
                 if (resultado)
                 {
                     ListarEmpleadosGrid();
-                    EstadoInicial(); // Volver al estado inicial
+                    EstadoInicial();
                 }
                 else
                 {

@@ -90,23 +90,18 @@ namespace Ingemat
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            // 1. Llama a EstadoInicial PRIMERO para limpiar.
             EstadoInicial();
 
-            // 2. Ahora sí, establece el modo "Nuevo".
             esNuevo = true;
 
-            // 3. Habilita los controles
             HabilitarControles(true);
 
-            // 4. Configura los botones para el modo "Nuevo"
             btnAgregar.Enabled = false;
             btnAplicar.Enabled = true;
             btnLimpiar.Enabled = true;
             btnBuscar.Enabled = false;
             dgvFacturas.Enabled = false;
 
-            // 5. Muestra y carga el ComboBox de Proyectos
             cmbProyecto.Visible = true;
             CargarComboProyectos();
         }
@@ -126,13 +121,12 @@ namespace Ingemat
                 fac.Estado = cmbEstadoFactura.Text;
                 fac.Observaciones = txtObservaciones.Text.Trim();
 
-                bool resultado = false; // Importante inicializar
+                bool resultado = false;
 
                 if (esNuevo)
                 {
                     if (cmbProyecto.SelectedValue == null)
                     {
-                        // Validamos aquí antes de enviar a la lógica
                         MessageBox.Show("Debe seleccionar un proyecto válido de la lista.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
@@ -141,13 +135,13 @@ namespace Ingemat
                     fac.IdProyecto = Convert.ToInt32(cmbProyecto.SelectedValue);
                     fac.FechaFactura = DateTime.Now;
 
-                    resultado = logica.InsertarFactura(fac); // Si falla, lanzará excepción
+                    resultado = logica.InsertarFactura(fac); 
                 }
                 else
                 {
                     fac.IdFactura = idFacturaSeleccionada;
                     fac.FechaFactura = fechaFacturaSeleccionada;
-                    resultado = logica.EditarFactura(fac); // Si falla, lanzará excepción
+                    resultado = logica.EditarFactura(fac); 
                 }
 
                 if (resultado)
@@ -164,7 +158,6 @@ namespace Ingemat
             }
             catch (Exception ex)
             {
-                // ESTE CATCH AHORA SÍ MOSTRARÁ EL ERROR
                 MessageBox.Show("Error detectado: " + ex.Message, "Error Crítico");
             }
         }

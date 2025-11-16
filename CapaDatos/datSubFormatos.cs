@@ -12,7 +12,6 @@ namespace CapaDatos
     {
         private readonly Conexion conexion = Conexion.Instancia;
 
-        // Obtener subformatos por formato
         public List<SubFormato> ObtenerSubFormatos(int idFormato)
         {
             List<SubFormato> subFormatos = new List<SubFormato>();
@@ -36,7 +35,6 @@ namespace CapaDatos
             return subFormatos;
         }
 
-        // Agregar nuevo subformato
         public void AgregarSubFormato(SubFormato subFormato)
         {
             using (SqlConnection conn = conexion.Conectar())

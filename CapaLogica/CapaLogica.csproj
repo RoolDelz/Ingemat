@@ -46,8 +46,11 @@
     <Compile Include="logEmpleado.cs" />
     <Compile Include="logFactura.cs" />
     <Compile Include="logFormatos.cs" />
+    <Compile Include="logGastoAdicional.cs" />
     <Compile Include="logLogin.cs" />
+    <Compile Include="logProforma.cs" />
     <Compile Include="logSubformatos.cs" />
+    <Compile Include="logTipoGasto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

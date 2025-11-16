@@ -12,11 +12,9 @@ namespace CapaDatos
     {
         private readonly Conexion conexion = Conexion.Instancia;
 
-        // Obtener formatos por categoría
         public List<Formato> ObtenerFormatos(int idCategoria)
         {
             List<Formato> formatos = new List<Formato>();
-
             using (SqlConnection conn = conexion.Conectar())
             {
                 conn.Open();
@@ -37,7 +35,6 @@ namespace CapaDatos
             return formatos;
         }
 
-        // Agregar nuevo formato
         public void AgregarFormato(Formato formato)
         {
             using (SqlConnection conn = conexion.Conectar())

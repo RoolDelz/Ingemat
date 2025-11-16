@@ -17,7 +17,6 @@ namespace CapaDatos
 
         private Conexion() { }
 
-        // Método para obtener la conexión
         public SqlConnection Conectar()
         {
             SqlConnection cn = new SqlConnection();
