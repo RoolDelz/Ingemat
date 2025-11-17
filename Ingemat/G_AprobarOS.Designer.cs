@@ -136,7 +136,7 @@
             this.BTinicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTinicio.ForeColor = System.Drawing.Color.White;
             this.BTinicio.Location = new System.Drawing.Point(12, 15);
-            this.BTinicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTinicio.Margin = new System.Windows.Forms.Padding(4);
             this.BTinicio.Name = "BTinicio";
             this.BTinicio.Size = new System.Drawing.Size(260, 185);
             this.BTinicio.TabIndex = 9;
@@ -234,7 +234,7 @@
             // btn_rechazar
             // 
             this.btn_rechazar.Location = new System.Drawing.Point(1759, 522);
-            this.btn_rechazar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_rechazar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_rechazar.Name = "btn_rechazar";
             this.btn_rechazar.Size = new System.Drawing.Size(100, 28);
             this.btn_rechazar.TabIndex = 197;
@@ -244,7 +244,7 @@
             // btn_ver
             // 
             this.btn_ver.Location = new System.Drawing.Point(1759, 386);
-            this.btn_ver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_ver.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ver.Name = "btn_ver";
             this.btn_ver.Size = new System.Drawing.Size(100, 28);
             this.btn_ver.TabIndex = 196;
@@ -254,7 +254,7 @@
             // btn_aprobar
             // 
             this.btn_aprobar.Location = new System.Drawing.Point(1759, 458);
-            this.btn_aprobar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_aprobar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_aprobar.Name = "btn_aprobar";
             this.btn_aprobar.Size = new System.Drawing.Size(100, 28);
             this.btn_aprobar.TabIndex = 194;
@@ -272,7 +272,7 @@
             this.Column6,
             this.Column3});
             this.dataGridView1.Location = new System.Drawing.Point(296, 212);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1419, 519);
@@ -400,7 +400,7 @@
             this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_buscar.ForeColor = System.Drawing.Color.Gray;
             this.btn_buscar.Location = new System.Drawing.Point(1231, 85);
-            this.btn_buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_buscar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(60, 36);
             this.btn_buscar.TabIndex = 184;
@@ -428,6 +428,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "G_AprobarOS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "9";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

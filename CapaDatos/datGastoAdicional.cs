@@ -33,5 +33,45 @@ namespace CapaDatos
             }
             return lista;
         }
+        public List<entGastoAdicional> ListarGastosPorProforma(int idProforma)
+        {
+            List<entGastoAdicional> lista = new List<entGastoAdicional>();
+            try
+            {
+                using (SqlConnection conn = conexion.Conectar())
+                {
+                    conn.Open();
+                    string query = @"
+                        SELECT 
+                            ga.IdGastoA, ga.NomGastoA, ga.Precio, ga.IdGastoTipo
+                        FROM 
+                            dbo.GastoAdicional ga
+                        JOIN 
+                            dbo.GastosProf gp ON ga.IdGastoA = gp.IdGastoA
+                        WHERE 
+                            gp.IdProforma = @IdProforma";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@IdProforma", idProforma);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        lista.Add(new entGastoAdicional
+                        {
+                            IdGastoA = Convert.ToInt32(reader["IdGastoA"]),
+                            NomGastoA = reader["NomGastoA"].ToString(),
+                            Precio = Convert.ToDecimal(reader["Precio"]),
+                            IdGastoTipo = Convert.ToInt32(reader["IdGastoTipo"])
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error en datGastoAdicional.ListarGastosPorProforma: " + ex.Message);
+            }
+            return lista;
+        }
     }
 }

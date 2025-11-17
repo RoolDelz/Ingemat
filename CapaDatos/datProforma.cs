@@ -25,11 +25,69 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@IdCli", proforma.IdCliente);
                 cmd.Parameters.AddWithValue("@IdCat", proforma.IdCategoria);
                 cmd.Parameters.AddWithValue("@IdFmt", proforma.IdFormato);
-                cmd.Parameters.AddWithValue("@Total", proforma.Total); // Costo
-                cmd.Parameters.AddWithValue("@Final", proforma.PrecioFinal); // Total
+                cmd.Parameters.AddWithValue("@Total", proforma.Total);
+                cmd.Parameters.AddWithValue("@Final", proforma.PrecioFinal);
 
                 return Convert.ToInt32(cmd.ExecuteScalar());
             }
+        }
+        public List<entProformaVista> ListarProformasVista()
+        {
+            List<entProformaVista> lista = new List<entProformaVista>();
+            try
+            {
+                using (SqlConnection conn = conexion.Conectar())
+                {
+                    string query = @"
+                        SELECT 
+                            p.IdProforma, p.Motivo, p.FechaP, p.DireccionProforma, 
+                            p.IdCliente, c.NomCliente, 
+                            p.IdCategoria, cat.NomCategoria, 
+                            p.IdFormato, f.NomFormato, f.PrecioFormato,
+                            p.Total, p.PrecioFinal
+                        FROM 
+                            dbo.Proforma p
+                        LEFT JOIN 
+                            dbo.Cliente c ON p.IdCliente = c.IdCliente
+                        LEFT JOIN 
+                            dbo.Categoria cat ON p.IdCategoria = cat.IdCategoria
+                        LEFT JOIN 
+                            dbo.Formato f ON p.IdFormato = f.IdFormato
+                        ORDER BY
+                            p.IdProforma DESC";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        lista.Add(new entProformaVista
+                        {
+                            IdProforma = Convert.ToInt32(reader["IdProforma"]),
+                            Motivo = reader["Motivo"].ToString(),
+                            FechaP = Convert.ToDateTime(reader["FechaP"]),
+                            DireccionProforma = reader["DireccionProforma"].ToString(),
+                            Total = Convert.ToDecimal(reader["Total"]),
+                            PrecioFinal = Convert.ToDecimal(reader["PrecioFinal"]),
+
+                            IdCliente = reader["IdCliente"] == DBNull.Value ? 0 : Convert.ToInt32(reader["IdCliente"]),
+                            NomCliente = reader["NomCliente"] == DBNull.Value ? "¡CLIENTE BORRADO!" : reader["NomCliente"].ToString(),
+
+                            IdCategoria = reader["IdCategoria"] == DBNull.Value ? 0 : Convert.ToInt32(reader["IdCategoria"]),
+                            NomCategoria = reader["NomCategoria"] == DBNull.Value ? "¡CATEGORIA BORRADA!" : reader["NomCategoria"].ToString(),
+
+                            IdFormato = reader["IdFormato"] == DBNull.Value ? 0 : Convert.ToInt32(reader["IdFormato"]),
+                            NomFormato = reader["NomFormato"] == DBNull.Value ? "¡FORMATO BORRADO!" : reader["NomFormato"].ToString(),
+
+                            PrecioFormato = reader["PrecioFormato"] == DBNull.Value ? 0m : Convert.ToDecimal(reader["PrecioFormato"])
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en la capa de datos al listar proformas: " + ex.Message);
+            }
+            return lista;
         }
     }
 }

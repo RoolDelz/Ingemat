@@ -43,10 +43,13 @@
   <ItemGroup>
     <Compile Include="entCliente.cs" />
     <Compile Include="entEmpleado.cs" />
+    <Compile Include="entEmpresa.cs" />
     <Compile Include="entFactura.cs" />
     <Compile Include="entGastoAdicional.cs" />
     <Compile Include="entGastoProf.cs" />
+    <Compile Include="entOrdenServicio.cs" />
     <Compile Include="entProforma.cs" />
+    <Compile Include="entProformaVista.cs" />
     <Compile Include="entSession.cs" />
     <Compile Include="entSubFormato.cs" />
     <Compile Include="entFormatos.cs" />

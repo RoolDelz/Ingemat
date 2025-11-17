@@ -36,6 +36,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtPassword
@@ -127,6 +128,16 @@
             this.panel1.Size = new System.Drawing.Size(832, 815);
             this.panel1.TabIndex = 144;
             // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(974, 308);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(260, 350);
+            this.label.TabIndex = 145;
+            this.label.Text = resources.GetString("label.Text");
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -134,6 +145,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1899, 814);
+            this.Controls.Add(this.label);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
@@ -158,5 +170,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label;
     }
 }

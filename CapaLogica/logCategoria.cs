@@ -14,7 +14,6 @@ namespace CapaLogica
     {
         private datCategorias datos = new datCategorias();
 
-        // Listar todas las categorías
         public List<Categoria> ListarCategorias()
         {
             return datos.ObtenerCategorias(); 

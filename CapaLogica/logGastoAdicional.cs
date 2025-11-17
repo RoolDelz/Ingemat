@@ -15,5 +15,9 @@ namespace CapaLogica
         {
             return datos.ObtenerGastosPorTipo(idTipoGasto);
         }
+        public List<entGastoAdicional> ListarGastosPorProforma(int idProforma)
+        {
+            return datos.ListarGastosPorProforma(idProforma);
+        }
     }
 }

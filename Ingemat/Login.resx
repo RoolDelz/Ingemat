@@ -829,4 +829,20 @@
         WglhSgUlKKBCgU4D2pKUVBIoooooAUUUDrRSYmf/2Q==
 </value>
   </data>
+  <data name="label.Text" xml:space="preserve">
+    <value>Gerente:
+Usuario: Juan Pérez Gómez
+Contraseña: admin123
+
+Ventas: 
+Usuario: Carlos Ruiz Soto
+Contraseña: ventas123
+
+Tecnico:
+Usuario: Pedro Salas Cueva
+Contraseña: tecnico123
+
+
+(incluir tildes y mayusculas)</value>
+  </data>
 </root>

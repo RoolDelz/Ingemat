@@ -44,11 +44,14 @@
     <Compile Include="logCategoria.cs" />
     <Compile Include="logCliente.cs" />
     <Compile Include="logEmpleado.cs" />
+    <Compile Include="logEmpresa.cs" />
     <Compile Include="logFactura.cs" />
     <Compile Include="logFormatos.cs" />
     <Compile Include="logGastoAdicional.cs" />
     <Compile Include="logLogin.cs" />
+    <Compile Include="logOrdenServicio.cs" />
     <Compile Include="logProforma.cs" />
+    <Compile Include="logProformaVista.cs" />
     <Compile Include="logSubformatos.cs" />
     <Compile Include="logTipoGasto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

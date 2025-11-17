@@ -45,10 +45,12 @@
     <Compile Include="datCategorias.cs" />
     <Compile Include="datCliente.cs" />
     <Compile Include="datEmpleado.cs" />
+    <Compile Include="datEmpresa.cs" />
     <Compile Include="datFactura.cs" />
     <Compile Include="datFormatos.cs" />
     <Compile Include="datGastoAdicional.cs" />
     <Compile Include="datGastosProf.cs" />
+    <Compile Include="datOrdenServicio.cs" />
     <Compile Include="datProforma.cs" />
     <Compile Include="datSubFormatos.cs" />
     <Compile Include="datTipoGasto.cs" />

@@ -506,9 +506,6 @@
             // cmbDocumento
             // 
             this.cmbDocumento.FormattingEnabled = true;
-            this.cmbDocumento.Items.AddRange(new object[] {
-            "RUC",
-            "DNI"});
             this.cmbDocumento.Location = new System.Drawing.Point(559, 122);
             this.cmbDocumento.Margin = new System.Windows.Forms.Padding(4);
             this.cmbDocumento.Name = "cmbDocumento";
