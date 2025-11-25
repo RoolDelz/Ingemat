@@ -49,5 +49,10 @@ namespace Ingemat
         {
             this.Close();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

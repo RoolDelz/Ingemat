@@ -13,45 +13,28 @@ namespace CapaLogica
     {
         private datFactura datos = new datFactura();
 
-        public DataTable ListarFacturas()
+        public int ObtenerIdProyecto(int idOS)
         {
-            return datos.ListarFacturas();
+            return datos.ObtenerIdProyectoPorOS(idOS);
         }
 
-        public DataTable ListarProyectosSinFactura()
+        public bool Guardar(entFactura factura)
         {
-            return datos.ListarProyectosSinFactura();
+            if (factura.IdProyecto == 0)
+            {
+                throw new Exception("No se encontró un Proyecto asociado a esta Orden de Servicio. Asegúrese de que el proyecto haya sido creado por el Gerente.");
+            }
+
+            if (string.IsNullOrEmpty(factura.NumFactura))
+            {
+                factura.NumFactura = "F-" + DateTime.Now.ToString("yyyyMMddHHmm");
+            }
+
+            return datos.InsertarFactura(factura);
         }
-
-        public bool InsertarFactura(entFactura fac)
+        public int ObtenerIdEmpresaPorOS(int idOS)
         {
-            if (string.IsNullOrWhiteSpace(fac.NumFactura))
-            {
-                throw new Exception("RECHAZADO: El campo Código (NumFactura) está vacío.");
-            }
-            if (fac.IdProyecto == 0)
-            {
-                throw new Exception("RECHAZADO: No se ha seleccionado un Proyecto válido (IdProyecto es 0).");
-            }
-            if (fac.PrecioFactura <= 0)
-            {
-                throw new Exception("RECHAZADO: El Precio debe ser mayor a cero.");
-            }
-            if (string.IsNullOrWhiteSpace(fac.Estado))
-            {
-                throw new Exception("RECHAZADO: El Estado no está seleccionado.");
-            }
-
-            return datos.InsertarFactura(fac);
-        }
-
-        public bool EditarFactura(entFactura fac)
-        {
-            if (string.IsNullOrWhiteSpace(fac.NumFactura) || fac.IdFactura == 0)
-            {
-                throw new Exception("RECHAZADO: Faltan datos para editar (NumFactura o IdFactura).");
-            }
-            return datos.EditarFactura(fac);
+            return datos.ObtenerIdEmpresaPorOS(idOS);
         }
     }
 }

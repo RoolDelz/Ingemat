@@ -22,7 +22,7 @@ namespace CapaDatos
             SqlConnection cn = new SqlConnection();
 
             cn.ConnectionString =
-                "Data Source=Rool;" +
+                "Data Source=Rool;" + 
                 "Initial Catalog=INGEMAT_M1;" +
                 "Integrated Security=true";
 

@@ -43,5 +43,9 @@ namespace CapaLogica
                 return false;
             }
         }
+        public entProformaVista ObtenerVistaPorId(int id)
+        {
+            return datosProforma.ObtenerProformaVistaPorId(id);
+        }
     }
 }

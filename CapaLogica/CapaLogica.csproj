@@ -52,6 +52,7 @@
     <Compile Include="logOrdenServicio.cs" />
     <Compile Include="logProforma.cs" />
     <Compile Include="logProformaVista.cs" />
+    <Compile Include="logProyecto.cs" />
     <Compile Include="logSubformatos.cs" />
     <Compile Include="logTipoGasto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

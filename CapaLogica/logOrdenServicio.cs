@@ -35,5 +35,19 @@ namespace CapaLogica
                 throw new Exception("Error al guardar la Orden de Servicio: " + ex.Message);
             }
         }
+        public List<entOrdenServicioVista> Listar(string estado = null)
+        {
+            return datos.ListarOrdenesServicioVista(estado);
+        }
+
+        public bool AprobarOS(int idOS)
+        {
+            return datos.ActualizarEstadoOS(idOS, "Aprobado");
+        }
+
+        public bool RechazarOS(int idOS)
+        {
+            return datos.ActualizarEstadoOS(idOS, "Rechazado");
+        }
     }
 }

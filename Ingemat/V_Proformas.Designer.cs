@@ -85,6 +85,7 @@
             this.btn_os.TabIndex = 163;
             this.btn_os.Text = "Ordenes De Servicio";
             this.btn_os.UseVisualStyleBackColor = false;
+            this.btn_os.Click += new System.EventHandler(this.btn_os_Click);
             // 
             // btn_proformas
             // 
@@ -343,6 +344,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "V_Proformas";
+            this.Load += new System.EventHandler(this.V_proformas_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProformas)).EndInit();
             this.ResumeLayout(false);

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaEntidad;
+using CapaLogica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,96 @@ namespace Ingemat
 {
     public partial class V_OrdenServicio : Form
     {
+        private logOrdenServicio _logOrdenServicio = new logOrdenServicio();
         public V_OrdenServicio()
         {
             InitializeComponent();
+        }
+        private void V_OrdenServicio_Load(object sender, EventArgs e)
+        {
+            ConfigurarDataGridView();
+            CargarOrdenes();
+        }
+        private void ConfigurarDataGridView()
+        {
+            dgvOrdenesServicio.AutoGenerateColumns = false;
+            dgvOrdenesServicio.Columns.Clear();
+
+            dgvOrdenesServicio.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "colIdOS",
+                HeaderText = "Cód. OS",
+                DataPropertyName = "IdOS",
+                Width = 60
+            });
+            dgvOrdenesServicio.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "colFecha",
+                HeaderText = "Fecha",
+                DataPropertyName = "FechaOS",
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "dd/MM/yyyy" },
+                Width = 80
+            });
+            dgvOrdenesServicio.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "colEmpresa",
+                HeaderText = "Empresa Solicitante",
+                DataPropertyName = "NomEmpresa",
+                Width = 200
+            });
+            dgvOrdenesServicio.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "colRuc",
+                HeaderText = "RUC",
+                DataPropertyName = "RucEmpresa",
+                Width = 100
+            });
+            dgvOrdenesServicio.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "colProforma",
+                HeaderText = "Proforma Ref.",
+                DataPropertyName = "MotivoProforma", 
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            });
+            dgvOrdenesServicio.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "colEstado",
+                HeaderText = "Estado",
+                DataPropertyName = "EstadoOS",
+                Width = 80
+            });
+        }
+        private void CargarOrdenes()
+        {
+            try
+            {
+                List<entOrdenServicioVista> lista = _logOrdenServicio.Listar();
+                dgvOrdenesServicio.DataSource = lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar órdenes de servicio: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnRealizarFactura_Click(object sender, EventArgs e)
+        {
+            if (dgvOrdenesServicio.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Seleccione una Orden Aprobada para facturar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            entOrdenServicioVista ordenSeleccionada = (entOrdenServicioVista)dgvOrdenesServicio.SelectedRows[0].DataBoundItem;
+
+            if (ordenSeleccionada.EstadoOS != "Aprobado")
+            {
+                MessageBox.Show("Solo se pueden facturar órdenes Aprobadas.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            V_NuevaFactura formFactura = new V_NuevaFactura(ordenSeleccionada);
+            formFactura.Show();
+            this.Hide();
         }
 
         private void btn_cerrar_Click(object sender, EventArgs e)

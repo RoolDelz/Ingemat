@@ -52,6 +52,7 @@
     <Compile Include="datGastosProf.cs" />
     <Compile Include="datOrdenServicio.cs" />
     <Compile Include="datProforma.cs" />
+    <Compile Include="datProyecto.cs" />
     <Compile Include="datSubFormatos.cs" />
     <Compile Include="datTipoGasto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

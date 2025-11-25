@@ -67,7 +67,7 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtRepresentante = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.lblCosto = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -152,7 +152,7 @@
             this.BTinicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTinicio.ForeColor = System.Drawing.Color.White;
             this.BTinicio.Location = new System.Drawing.Point(12, 15);
-            this.BTinicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTinicio.Margin = new System.Windows.Forms.Padding(4);
             this.BTinicio.Name = "BTinicio";
             this.BTinicio.Size = new System.Drawing.Size(260, 185);
             this.BTinicio.TabIndex = 9;
@@ -259,7 +259,7 @@
             // dtpFecha
             // 
             this.dtpFecha.Location = new System.Drawing.Point(997, 257);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(265, 22);
             this.dtpFecha.TabIndex = 381;
@@ -462,7 +462,7 @@
             // txtEmpresaSolicitante
             // 
             this.txtEmpresaSolicitante.Location = new System.Drawing.Point(587, 79);
-            this.txtEmpresaSolicitante.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmpresaSolicitante.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmpresaSolicitante.Name = "txtEmpresaSolicitante";
             this.txtEmpresaSolicitante.Size = new System.Drawing.Size(379, 22);
             this.txtEmpresaSolicitante.TabIndex = 386;
@@ -470,7 +470,7 @@
             // txtRuc
             // 
             this.txtRuc.Location = new System.Drawing.Point(1120, 78);
-            this.txtRuc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRuc.Margin = new System.Windows.Forms.Padding(4);
             this.txtRuc.Name = "txtRuc";
             this.txtRuc.Size = new System.Drawing.Size(379, 22);
             this.txtRuc.TabIndex = 387;
@@ -522,7 +522,7 @@
             // txtDireccionEmpresa
             // 
             this.txtDireccionEmpresa.Location = new System.Drawing.Point(587, 140);
-            this.txtDireccionEmpresa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDireccionEmpresa.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccionEmpresa.Name = "txtDireccionEmpresa";
             this.txtDireccionEmpresa.Size = new System.Drawing.Size(379, 22);
             this.txtDireccionEmpresa.TabIndex = 393;
@@ -548,7 +548,7 @@
             this.Column2,
             this.Column3});
             this.dgvGastosAdicionales.Location = new System.Drawing.Point(400, 428);
-            this.dgvGastosAdicionales.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvGastosAdicionales.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGastosAdicionales.Name = "dgvGastosAdicionales";
             this.dgvGastosAdicionales.RowHeadersWidth = 51;
             this.dgvGastosAdicionales.Size = new System.Drawing.Size(459, 229);
@@ -575,14 +575,14 @@
             this.Column3.Name = "Column3";
             this.Column3.Width = 125;
             // 
-            // textBox9
+            // txtRepresentante
             // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox9.Location = new System.Drawing.Point(587, 175);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(379, 22);
-            this.textBox9.TabIndex = 396;
+            this.txtRepresentante.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtRepresentante.Location = new System.Drawing.Point(587, 175);
+            this.txtRepresentante.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRepresentante.Name = "txtRepresentante";
+            this.txtRepresentante.Size = new System.Drawing.Size(379, 22);
+            this.txtRepresentante.TabIndex = 396;
             // 
             // label13
             // 
@@ -665,6 +665,7 @@
             this.btn_regresar.TabIndex = 403;
             this.btn_regresar.Text = "Regresar";
             this.btn_regresar.UseVisualStyleBackColor = false;
+            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
             // V_NuevaOrdenServicio
             // 
@@ -677,7 +678,7 @@
             this.Controls.Add(this.label24);
             this.Controls.Add(this.lblCosto);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.txtRepresentante);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dgvGastosAdicionales);
             this.Controls.Add(this.txtDireccionEmpresa);
@@ -760,7 +761,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtRepresentante;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblCosto;
         private System.Windows.Forms.Label label20;

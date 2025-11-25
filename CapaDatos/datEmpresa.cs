@@ -63,5 +63,34 @@ namespace CapaDatos
                 return Convert.ToInt32(cmd.ExecuteScalar());
             }
         }
+        public entEmpresa ObtenerEmpresaPorId(int idEmpresa)
+        {
+            entEmpresa emp = null;
+            try
+            {
+                using (SqlConnection conn = conexion.Conectar())
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM dbo.Empresa WHERE IdEmpresa = @Id";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Id", idEmpresa);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        emp = new entEmpresa
+                        {
+                            IdEmpresa = Convert.ToInt32(reader["IdEmpresa"]),
+                            NomEmpresa = reader["NomEmpresa"].ToString(),
+                            Ruc = reader["Ruc"].ToString(),
+                            TelefonoEmpresa = reader["TelefonoEmpresa"].ToString(),
+                            CorreoEmpresa = reader["CorreoEmpresa"].ToString(),
+                            DireccionEmpresa = reader["DireccionEmpresa"].ToString()
+                        };
+                    }
+                }
+            }
+            catch (Exception ex) { System.Diagnostics.Debug.WriteLine("Error: " + ex.Message); }
+            return emp;
+        }
     }
 }

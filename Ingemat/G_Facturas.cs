@@ -69,7 +69,6 @@ namespace Ingemat
 
         private void CargarGrid()
         {
-            dgvFacturas.DataSource = logica.ListarFacturas();
             if (dgvFacturas.Columns.Contains("IdFactura"))
             {
                 dgvFacturas.Columns["IdFactura"].Visible = false;
@@ -82,7 +81,6 @@ namespace Ingemat
 
         private void CargarComboProyectos()
         {
-            cmbProyecto.DataSource = logica.ListarProyectosSinFactura();
             cmbProyecto.DisplayMember = "NomProyecto";
             cmbProyecto.ValueMember = "IdProyecto";
             cmbProyecto.SelectedIndex = -1;
@@ -119,7 +117,6 @@ namespace Ingemat
                 fac.NumFactura = txtCodigo.Text.Trim();
                 fac.PrecioFactura = decimal.Parse(txtPrecio.Text.Trim(), CultureInfo.InvariantCulture);
                 fac.Estado = cmbEstadoFactura.Text;
-                fac.Observaciones = txtObservaciones.Text.Trim();
 
                 bool resultado = false;
 
@@ -135,13 +132,11 @@ namespace Ingemat
                     fac.IdProyecto = Convert.ToInt32(cmbProyecto.SelectedValue);
                     fac.FechaFactura = DateTime.Now;
 
-                    resultado = logica.InsertarFactura(fac); 
                 }
                 else
                 {
                     fac.IdFactura = idFacturaSeleccionada;
                     fac.FechaFactura = fechaFacturaSeleccionada;
-                    resultado = logica.EditarFactura(fac); 
                 }
 
                 if (resultado)

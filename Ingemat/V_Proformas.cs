@@ -142,5 +142,12 @@ namespace Ingemat
             this.Hide();
             pantalla.Show();
         }
+
+        private void btn_os_Click(object sender, EventArgs e)
+        {
+            V_OrdenServicio pantalla = new V_OrdenServicio();
+            this.Hide();
+            pantalla.Show();
+        }
     }
 }

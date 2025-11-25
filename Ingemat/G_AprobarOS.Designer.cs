@@ -38,16 +38,10 @@
             this.btn_empleados = new System.Windows.Forms.Button();
             this.btn_formatos = new System.Windows.Forms.Button();
             this.btn_proyectos = new System.Windows.Forms.Button();
-            this.btn_rechazar = new System.Windows.Forms.Button();
-            this.btn_ver = new System.Windows.Forms.Button();
-            this.btn_aprobar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRechazar = new System.Windows.Forms.Button();
+            this.btnCrearPro = new System.Windows.Forms.Button();
+            this.btnAprobar = new System.Windows.Forms.Button();
+            this.dgvOrdenes = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,7 +50,7 @@
             this.Txt_Dni = new System.Windows.Forms.TextBox();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenes)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -231,94 +225,48 @@
             this.btn_proyectos.UseVisualStyleBackColor = false;
             this.btn_proyectos.Click += new System.EventHandler(this.btn_proyectos_Click);
             // 
-            // btn_rechazar
+            // btnRechazar
             // 
-            this.btn_rechazar.Location = new System.Drawing.Point(1759, 522);
-            this.btn_rechazar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_rechazar.Name = "btn_rechazar";
-            this.btn_rechazar.Size = new System.Drawing.Size(100, 28);
-            this.btn_rechazar.TabIndex = 197;
-            this.btn_rechazar.Text = "Rechazar";
-            this.btn_rechazar.UseVisualStyleBackColor = true;
+            this.btnRechazar.Location = new System.Drawing.Point(1759, 495);
+            this.btnRechazar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRechazar.Name = "btnRechazar";
+            this.btnRechazar.Size = new System.Drawing.Size(100, 28);
+            this.btnRechazar.TabIndex = 197;
+            this.btnRechazar.Text = "Rechazar";
+            this.btnRechazar.UseVisualStyleBackColor = true;
+            this.btnRechazar.Click += new System.EventHandler(this.btnRechazar_Click);
             // 
-            // btn_ver
+            // btnCrearPro
             // 
-            this.btn_ver.Location = new System.Drawing.Point(1759, 386);
-            this.btn_ver.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_ver.Name = "btn_ver";
-            this.btn_ver.Size = new System.Drawing.Size(100, 28);
-            this.btn_ver.TabIndex = 196;
-            this.btn_ver.Text = "Ver";
-            this.btn_ver.UseVisualStyleBackColor = true;
+            this.btnCrearPro.Location = new System.Drawing.Point(1745, 386);
+            this.btnCrearPro.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCrearPro.Name = "btnCrearPro";
+            this.btnCrearPro.Size = new System.Drawing.Size(127, 28);
+            this.btnCrearPro.TabIndex = 196;
+            this.btnCrearPro.Text = "Crear Proyecto";
+            this.btnCrearPro.UseVisualStyleBackColor = true;
+            this.btnCrearPro.Click += new System.EventHandler(this.btnCrearPro_Click);
             // 
-            // btn_aprobar
+            // btnAprobar
             // 
-            this.btn_aprobar.Location = new System.Drawing.Point(1759, 458);
-            this.btn_aprobar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_aprobar.Name = "btn_aprobar";
-            this.btn_aprobar.Size = new System.Drawing.Size(100, 28);
-            this.btn_aprobar.TabIndex = 194;
-            this.btn_aprobar.Text = "Aprobar";
-            this.btn_aprobar.UseVisualStyleBackColor = true;
+            this.btnAprobar.Location = new System.Drawing.Point(1759, 439);
+            this.btnAprobar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAprobar.Name = "btnAprobar";
+            this.btnAprobar.Size = new System.Drawing.Size(100, 28);
+            this.btnAprobar.TabIndex = 194;
+            this.btnAprobar.Text = "Aprobar";
+            this.btnAprobar.UseVisualStyleBackColor = true;
+            this.btnAprobar.Click += new System.EventHandler(this.btnAprobar_Click);
             // 
-            // dataGridView1
+            // dgvOrdenes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(296, 212);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1419, 519);
-            this.dataGridView1.TabIndex = 193;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "IdOrden S.";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre Proyecto";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 400;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Fecha";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 120;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Estudio";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 150;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Precio";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Estado";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
+            this.dgvOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrdenes.Location = new System.Drawing.Point(318, 211);
+            this.dgvOrdenes.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvOrdenes.Name = "dgvOrdenes";
+            this.dgvOrdenes.RowHeadersWidth = 51;
+            this.dgvOrdenes.Size = new System.Drawing.Size(1419, 519);
+            this.dgvOrdenes.TabIndex = 193;
             // 
             // textBox1
             // 
@@ -411,10 +359,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1899, 814);
-            this.Controls.Add(this.btn_rechazar);
-            this.Controls.Add(this.btn_ver);
-            this.Controls.Add(this.btn_aprobar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnRechazar);
+            this.Controls.Add(this.btnCrearPro);
+            this.Controls.Add(this.btnAprobar);
+            this.Controls.Add(this.dgvOrdenes);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -429,8 +377,9 @@
             this.Name = "G_AprobarOS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "9";
+            this.Load += new System.EventHandler(this.G_aprobarOS_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,10 +395,10 @@
         private System.Windows.Forms.Button btn_os;
         private System.Windows.Forms.Button btn_formatos;
         private System.Windows.Forms.Button btn_proyectos;
-        private System.Windows.Forms.Button btn_rechazar;
-        private System.Windows.Forms.Button btn_ver;
-        private System.Windows.Forms.Button btn_aprobar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnRechazar;
+        private System.Windows.Forms.Button btnCrearPro;
+        private System.Windows.Forms.Button btnAprobar;
+        private System.Windows.Forms.DataGridView dgvOrdenes;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -457,12 +406,6 @@
         private System.Windows.Forms.ComboBox Estado;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.TextBox Txt_Dni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button btn_facturas;
     }
 }

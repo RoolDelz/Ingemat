@@ -70,6 +70,8 @@ namespace Ingemat
 
             txtDireccion.Text = proformaActual.DireccionProforma;
 
+            txtRepresentante.Text = proformaActual.NomCliente;
+
             cmbCategoria.Items.Add(new Categoria { IdCategoria = proformaActual.IdCategoria, NomCategoria = proformaActual.NomCategoria });
             cmbCategoria.SelectedIndex = 0;
 
@@ -110,8 +112,6 @@ namespace Ingemat
                     CorreoEmpresa = txtCorreo.Text
                 };
 
-                // 2. Llamar a la lógica para guardar la Empresa
-                // logEmpresa lanzará una excepción si la validación falla (ej. RUC vacío)
                 int idEmpresa = _logEmpresa.InsertarEmpresa(nuevaEmpresa);
 
                 entOrdenServicio nuevaOS = new entOrdenServicio
@@ -126,7 +126,7 @@ namespace Ingemat
                 if (exito)
                 {
                     MessageBox.Show("¡Orden de Servicio creada exitosamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    RegresarAProformas();
                 }
             }
             catch (Exception ex)
@@ -165,6 +165,18 @@ namespace Ingemat
             V_Facturas pantalla = new V_Facturas();
             this.Hide();
             pantalla.Show();
+        }
+
+        private void RegresarAProformas()
+        {
+            V_Proformas formProformas = new V_Proformas();
+            formProformas.Show();
+            this.Close();
+        }
+
+        private void btn_regresar_Click(object sender, EventArgs e)
+        {
+            RegresarAProformas();
         }
     }
 }

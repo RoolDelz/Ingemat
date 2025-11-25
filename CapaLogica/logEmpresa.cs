@@ -36,5 +36,9 @@ namespace CapaLogica
                 throw new Exception("Error al guardar la empresa: " + ex.Message);
             }
         }
+        public entEmpresa ObtenerPorId(int id)
+        {
+            return datos.ObtenerEmpresaPorId(id);
+        }
     }
 }

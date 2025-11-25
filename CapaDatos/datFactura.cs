@@ -11,144 +11,78 @@ namespace CapaDatos
 {
     public class datFactura
     {
-        public DataTable ListarFacturas()
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
-            {
-                try
-                {
-                    cn.Open();
-                    string query = @"
-                        SELECT 
-                            F.IdFactura, F.NumFactura AS Codigo,
-                            P.NomProyecto, F.FechaFactura AS Fecha, 
-                            FO.NomFormato AS Estudio, F.PrecioFactura AS Precio, 
-                            F.Estado, F.Observaciones
-                        FROM dbo.Factura F
-                        JOIN dbo.Proyecto P ON F.IdProyecto = P.IdProyecto
-                        JOIN dbo.OrdenServicio OS ON P.IdOS = OS.IdOS
-                        JOIN dbo.Proforma PR ON OS.IdProforma = PR.IdProforma
-                        JOIN dbo.Formato FO ON PR.IdFormato = FO.IdFormato";
+        private readonly Conexion conexion = Conexion.Instancia;
 
-                    using (SqlCommand cmd = new SqlCommand(query, cn))
-                    {
-                        SqlDataAdapter da = new SqlDataAdapter(cmd);
-                        da.Fill(dt);
-                    }
-                }
-                catch (Exception ex)
+        public bool InsertarFactura(entFactura factura)
+        {
+            bool exito = false;
+            try
+            {
+                using (SqlConnection conn = conexion.Conectar())
                 {
-                    Console.WriteLine("Error en datFactura.ListarFacturas: " + ex.Message);
+                    conn.Open();
+                    string query = @"
+                        INSERT INTO dbo.Factura (NumFactura, FechaFactura, PrecioFactura, IdProyecto, MetodoPago) 
+                        VALUES (@Num, @Fecha, @Precio, @IdProy, @Metodo)";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    cmd.Parameters.AddWithValue("@Num", factura.NumFactura ?? "S/N");
+                    cmd.Parameters.AddWithValue("@Fecha", factura.FechaFactura);
+                    cmd.Parameters.AddWithValue("@Precio", factura.PrecioFactura);
+                    cmd.Parameters.AddWithValue("@IdProy", factura.IdProyecto);
+                    cmd.Parameters.AddWithValue("@Metodo", factura.MetodoPago);
+
+                    int filas = cmd.ExecuteNonQuery();
+                    exito = filas > 0;
                 }
             }
-            return dt;
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error en datFactura.InsertarFactura: " + ex.Message);
+                throw ex;
+            }
+            return exito;
         }
 
-        public DataTable ListarProyectosSinFactura()
+        public int ObtenerIdProyectoPorOS(int idOS)
         {
-            DataTable dt = new DataTable();
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            int idProyecto = 0;
+            try
             {
-                try
+                using (SqlConnection conn = conexion.Conectar())
                 {
-                    cn.Open();
-                    string query = @"
-                        SELECT P.IdProyecto, P.NomProyecto 
-                        FROM dbo.Proyecto P
-                        LEFT JOIN dbo.Factura F ON P.IdProyecto = F.IdProyecto
-                        WHERE F.IdFactura IS NULL";
+                    conn.Open();
+                    string query = "SELECT IdProyecto FROM dbo.Proyecto WHERE IdOS = @IdOS";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@IdOS", idOS);
 
-                    using (SqlCommand cmd = new SqlCommand(query, cn))
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
                     {
-                        SqlDataAdapter da = new SqlDataAdapter(cmd);
-                        da.Fill(dt);
+                        idProyecto = Convert.ToInt32(result);
                     }
                 }
-                catch (Exception ex) { Console.WriteLine(ex.Message); }
             }
-            return dt;
+            catch (Exception) { }
+            return idProyecto;
         }
-
-        public bool InsertarFactura(entFactura fac)
+        public int ObtenerIdEmpresaPorOS(int idOS)
         {
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            int idEmpresa = 0;
+            try
             {
-                try
+                using (SqlConnection conn = conexion.Conectar())
                 {
-                    cn.Open();
-                    string query = @"
-                SET NOCOUNT OFF; 
-                INSERT INTO dbo.Factura 
-                             (NumFactura, FechaFactura, PrecioFactura, Observaciones, IdProyecto, Estado)
-                             VALUES 
-                             (@Num, @Fecha, @Precio, @Obs, @IdProyecto, @Estado)";
-
-                    using (SqlCommand cmd = new SqlCommand(query, cn))
-                    {
-                        cmd.Parameters.AddWithValue("@Num", fac.NumFactura);
-                        cmd.Parameters.AddWithValue("@Fecha", fac.FechaFactura);
-                        cmd.Parameters.AddWithValue("@Precio", fac.PrecioFactura);
-                        cmd.Parameters.AddWithValue("@Obs", fac.Observaciones);
-                        cmd.Parameters.AddWithValue("@IdProyecto", fac.IdProyecto);
-                        cmd.Parameters.AddWithValue("@Estado", fac.Estado);
-
-                        int filas = cmd.ExecuteNonQuery();
-
-                        if (filas == 0)
-                        {
-                            throw new Exception("ERROR DE BASE DE DATOS: La operación SQL no insertó ninguna fila.");
-                        }
-
-                        return true; 
-                    }
-                }
-                catch (SqlException ex)
-                {
-                    throw new Exception("ERROR SQL: " + ex.Message);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception("ERROR INESPERADO: " + ex.Message);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT IdEmpresa FROM dbo.OrdenServicio WHERE IdOS = @IdOS", conn);
+                    cmd.Parameters.AddWithValue("@IdOS", idOS);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null) idEmpresa = Convert.ToInt32(result);
                 }
             }
-        }
-
-        public bool EditarFactura(entFactura fac)
-        {
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
-            {
-                try
-                {
-                    cn.Open();
-                    string query = @"UPDATE dbo.Factura SET
-                                     NumFactura = @Num,
-                                     FechaFactura = @Fecha,
-                                     PrecioFactura = @Precio,
-                                     Observaciones = @Obs,
-                                     Estado = @Estado
-                                     WHERE IdFactura = @IdFactura";
-                    using (SqlCommand cmd = new SqlCommand(query, cn))
-                    {
-                        cmd.Parameters.AddWithValue("@Num", fac.NumFactura);
-                        cmd.Parameters.AddWithValue("@Fecha", fac.FechaFactura);
-                        cmd.Parameters.AddWithValue("@Precio", fac.PrecioFactura);
-                        cmd.Parameters.AddWithValue("@Obs", fac.Observaciones);
-                        cmd.Parameters.AddWithValue("@Estado", fac.Estado);
-                        cmd.Parameters.AddWithValue("@IdFactura", fac.IdFactura);
-
-                        int filas = cmd.ExecuteNonQuery();
-                        return (filas > 0);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("--- ERROR SQL AL EDITAR FACTURA ---");
-                    Console.WriteLine(ex.Message);
-                    Console.WriteLine("-----------------------------------");
-                    return false;
-                }
-            }
+            catch { }
+            return idEmpresa;
         }
     }
 }
