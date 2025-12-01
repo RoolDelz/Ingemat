@@ -50,6 +50,10 @@
             this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.btnAgregarFormato = new System.Windows.Forms.Button();
             this.btnAgregarSubFormato = new System.Windows.Forms.Button();
+            this.btnEditarCategoria = new System.Windows.Forms.Button();
+            this.btnEditarFormato = new System.Windows.Forms.Button();
+            this.btnEditarSubFormato = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFormatos)).BeginInit();
             this.SuspendLayout();
@@ -93,7 +97,7 @@
             this.btn_facturas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_facturas.ForeColor = System.Drawing.Color.White;
             this.btn_facturas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_facturas.Location = new System.Drawing.Point(12, 578);
+            this.btn_facturas.Location = new System.Drawing.Point(12, 568);
             this.btn_facturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_facturas.Name = "btn_facturas";
             this.btn_facturas.Size = new System.Drawing.Size(265, 59);
@@ -270,9 +274,8 @@
             this.cmbFormato.Location = new System.Drawing.Point(500, 187);
             this.cmbFormato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbFormato.Name = "cmbFormato";
-            this.cmbFormato.Size = new System.Drawing.Size(429, 27);
+            this.cmbFormato.Size = new System.Drawing.Size(441, 27);
             this.cmbFormato.TabIndex = 194;
-            this.cmbFormato.SelectedIndexChanged += new System.EventHandler(this.cmbFormato_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -292,10 +295,10 @@
             this.txtSubformato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtSubformato.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSubformato.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubformato.Location = new System.Drawing.Point(505, 240);
+            this.txtSubformato.Location = new System.Drawing.Point(519, 240);
             this.txtSubformato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSubformato.Name = "txtSubformato";
-            this.txtSubformato.Size = new System.Drawing.Size(425, 25);
+            this.txtSubformato.Size = new System.Drawing.Size(433, 25);
             this.txtSubformato.TabIndex = 189;
             // 
             // label4
@@ -330,7 +333,7 @@
             this.cmbCategoria.Location = new System.Drawing.Point(500, 129);
             this.cmbCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(291, 24);
+            this.cmbCategoria.Size = new System.Drawing.Size(452, 24);
             this.cmbCategoria.TabIndex = 200;
             this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
             // 
@@ -367,11 +370,59 @@
             this.btnAgregarSubFormato.UseVisualStyleBackColor = true;
             this.btnAgregarSubFormato.Click += new System.EventHandler(this.btnAgregarSubFormato_Click);
             // 
+            // btnEditarCategoria
+            // 
+            this.btnEditarCategoria.Location = new System.Drawing.Point(1198, 736);
+            this.btnEditarCategoria.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditarCategoria.Name = "btnEditarCategoria";
+            this.btnEditarCategoria.Size = new System.Drawing.Size(137, 28);
+            this.btnEditarCategoria.TabIndex = 204;
+            this.btnEditarCategoria.Text = "Editar Categoria";
+            this.btnEditarCategoria.UseVisualStyleBackColor = true;
+            this.btnEditarCategoria.Click += new System.EventHandler(this.btnEditarCategoria_Click);
+            // 
+            // btnEditarFormato
+            // 
+            this.btnEditarFormato.Location = new System.Drawing.Point(1343, 736);
+            this.btnEditarFormato.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditarFormato.Name = "btnEditarFormato";
+            this.btnEditarFormato.Size = new System.Drawing.Size(137, 28);
+            this.btnEditarFormato.TabIndex = 205;
+            this.btnEditarFormato.Text = "Editar Formato";
+            this.btnEditarFormato.UseVisualStyleBackColor = true;
+            this.btnEditarFormato.Click += new System.EventHandler(this.btnEditarFormato_Click);
+            // 
+            // btnEditarSubFormato
+            // 
+            this.btnEditarSubFormato.Location = new System.Drawing.Point(1497, 736);
+            this.btnEditarSubFormato.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditarSubFormato.Name = "btnEditarSubFormato";
+            this.btnEditarSubFormato.Size = new System.Drawing.Size(157, 28);
+            this.btnEditarSubFormato.TabIndex = 206;
+            this.btnEditarSubFormato.Text = "Editar SubFormato";
+            this.btnEditarSubFormato.UseVisualStyleBackColor = true;
+            this.btnEditarSubFormato.Click += new System.EventHandler(this.btnEditarSubFormato_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(1087, 736);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(103, 28);
+            this.btnGuardar.TabIndex = 207;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // G_Formatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1899, 814);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnEditarSubFormato);
+            this.Controls.Add(this.btnEditarFormato);
+            this.Controls.Add(this.btnEditarCategoria);
             this.Controls.Add(this.btnAgregarSubFormato);
             this.Controls.Add(this.btnAgregarFormato);
             this.Controls.Add(this.btnAgregarCategoria);
@@ -390,6 +441,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "G_Formatos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.G_Formatos_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFormatos)).EndInit();
             this.ResumeLayout(false);
@@ -420,5 +472,9 @@
         private System.Windows.Forms.Button btnAgregarFormato;
         private System.Windows.Forms.Button btnAgregarSubFormato;
         private System.Windows.Forms.Button btn_facturas;
+        private System.Windows.Forms.Button btnEditarCategoria;
+        private System.Windows.Forms.Button btnEditarFormato;
+        private System.Windows.Forms.Button btnEditarSubFormato;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

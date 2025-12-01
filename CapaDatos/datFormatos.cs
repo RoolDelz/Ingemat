@@ -47,5 +47,22 @@ namespace CapaDatos
                 cmd.ExecuteNonQuery();
             }
         }
+        public bool EditarFormato(Formato formato)
+        {
+            try
+            {
+                using (SqlConnection conn = conexion.Conectar())
+                {
+                    conn.Open();
+                    string query = "UPDATE Formato SET NomFormato = @Nom, PrecioFormato = @Precio WHERE IdFormato = @Id";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Nom", formato.NomFormato);
+                    cmd.Parameters.AddWithValue("@Precio", formato.PrecioFormato);
+                    cmd.Parameters.AddWithValue("@Id", formato.IdFormato);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+            catch (Exception) { return false; }
+        }
     }
 }

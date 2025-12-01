@@ -92,7 +92,7 @@
             this.btn_facturas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_facturas.ForeColor = System.Drawing.Color.White;
             this.btn_facturas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_facturas.Location = new System.Drawing.Point(12, 578);
+            this.btn_facturas.Location = new System.Drawing.Point(12, 540);
             this.btn_facturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_facturas.Name = "btn_facturas";
             this.btn_facturas.Size = new System.Drawing.Size(265, 59);
@@ -110,7 +110,7 @@
             this.btn_ot.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ot.ForeColor = System.Drawing.Color.White;
             this.btn_ot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ot.Location = new System.Drawing.Point(12, 514);
+            this.btn_ot.Location = new System.Drawing.Point(12, 477);
             this.btn_ot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_ot.Name = "btn_ot";
             this.btn_ot.Size = new System.Drawing.Size(265, 59);
@@ -145,7 +145,7 @@
             this.btn_os.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_os.ForeColor = System.Drawing.Color.White;
             this.btn_os.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_os.Location = new System.Drawing.Point(12, 450);
+            this.btn_os.Location = new System.Drawing.Point(12, 418);
             this.btn_os.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_os.Name = "btn_os";
             this.btn_os.Size = new System.Drawing.Size(265, 59);
@@ -180,7 +180,7 @@
             this.btn_empleados.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_empleados.ForeColor = System.Drawing.Color.White;
             this.btn_empleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_empleados.Location = new System.Drawing.Point(12, 315);
+            this.btn_empleados.Location = new System.Drawing.Point(7, 287);
             this.btn_empleados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_empleados.Name = "btn_empleados";
             this.btn_empleados.Size = new System.Drawing.Size(265, 66);
@@ -198,7 +198,7 @@
             this.btn_formatos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_formatos.ForeColor = System.Drawing.Color.White;
             this.btn_formatos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_formatos.Location = new System.Drawing.Point(12, 386);
+            this.btn_formatos.Location = new System.Drawing.Point(12, 355);
             this.btn_formatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_formatos.Name = "btn_formatos";
             this.btn_formatos.Size = new System.Drawing.Size(265, 59);
@@ -216,7 +216,7 @@
             this.btn_proyectos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_proyectos.ForeColor = System.Drawing.Color.White;
             this.btn_proyectos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_proyectos.Location = new System.Drawing.Point(12, 251);
+            this.btn_proyectos.Location = new System.Drawing.Point(12, 224);
             this.btn_proyectos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_proyectos.Name = "btn_proyectos";
             this.btn_proyectos.Size = new System.Drawing.Size(260, 59);

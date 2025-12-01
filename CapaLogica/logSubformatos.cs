@@ -1,4 +1,5 @@
 ﻿using CapaDatos;
+using CapaEntidad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,15 @@ namespace CapaLogica
 
             datos.AgregarSubFormato(subFormato); 
             return true;
+        }
+        public bool Editar(SubFormato sub)
+        {
+            if (string.IsNullOrWhiteSpace(sub.NomSubFormato)) return false;
+            return datos.EditarSubFormato(sub);
+        }
+        public List<entFormatoVista> ListarTodo()
+        {
+            return datos.ListarVistaCompleta();
         }
     }
 }

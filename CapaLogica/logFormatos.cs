@@ -29,5 +29,10 @@ namespace CapaLogica
             datos.AgregarFormato(formato); 
             return true;
         }
+        public bool Editar(Formato fmt)
+        {
+            if (string.IsNullOrWhiteSpace(fmt.NomFormato)) return false;
+            return datos.EditarFormato(fmt);
+        }
     }
 }

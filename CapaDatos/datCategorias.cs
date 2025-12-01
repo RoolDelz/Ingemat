@@ -32,7 +32,6 @@ namespace CapaDatos
             return categorias;
         }
 
-        // Agregar nueva categoría
         public void AgregarCategoria(Categoria categoria)
         {
             using (SqlConnection conn = conexion.Conectar())
@@ -42,6 +41,22 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@NomCategoria", categoria.NomCategoria);
                 cmd.ExecuteNonQuery();
             }
+        }
+        public bool EditarCategoria(Categoria categoria)
+        {
+            try
+            {
+                using (SqlConnection conn = conexion.Conectar())
+                {
+                    conn.Open();
+                    string query = "UPDATE Categoria SET NomCategoria = @Nom WHERE IdCategoria = @Id";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Nom", categoria.NomCategoria);
+                    cmd.Parameters.AddWithValue("@Id", categoria.IdCategoria);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+            catch (Exception) { return false; }
         }
     }
 }

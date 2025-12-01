@@ -29,5 +29,10 @@ namespace CapaLogica
             datos.AgregarCategoria(categoria); 
             return true;
         }
+        public bool Editar(Categoria cat)
+        {
+            if (string.IsNullOrWhiteSpace(cat.NomCategoria)) return false;
+            return datos.EditarCategoria(cat);
+        }
     }
 }
