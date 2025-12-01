@@ -36,5 +36,13 @@ namespace CapaLogica
         {
             return datos.ObtenerIdEmpresaPorOS(idOS);
         }
+        public List<entFacturaVista> Listar()
+        {
+            return datos.ListarFacturasVista();
+        }
+        public DataTable ObtenerDetalle(int idFactura)
+        {
+            return datos.ObtenerDetallesVinculados(idFactura);
+        }
     }
 }

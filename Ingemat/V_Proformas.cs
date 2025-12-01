@@ -149,5 +149,12 @@ namespace Ingemat
             this.Hide();
             pantalla.Show();
         }
+
+        private void btn_facturas_Click_1(object sender, EventArgs e)
+        {
+            V_Facturas pantalla = new V_Facturas();
+            this.Hide();
+            pantalla.Show();
+        }
     }
 }

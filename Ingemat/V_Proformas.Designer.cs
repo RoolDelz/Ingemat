@@ -68,6 +68,7 @@
             this.btn_facturas.TabIndex = 3;
             this.btn_facturas.Text = "Facturas";
             this.btn_facturas.UseVisualStyleBackColor = false;
+            this.btn_facturas.Click += new System.EventHandler(this.btn_facturas_Click_1);
             // 
             // btn_os
             // 

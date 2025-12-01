@@ -15,194 +15,54 @@ namespace Ingemat
 {
     public partial class G_Facturas : Form
     {
-        private logFactura logica = new logFactura();
-        private bool esNuevo = false;
-        private int idFacturaSeleccionada = 0;
-        private DateTime fechaFacturaSeleccionada;
+        private logFactura _logFactura = new logFactura();
         public G_Facturas()
         {
             InitializeComponent();
         }
-
         private void G_Facturas_Load(object sender, EventArgs e)
         {
-            CargarGrid();
-            EstadoInicial();
-
-            cmbEstadoFactura.Items.Add("Pendiente");
-            cmbEstadoFactura.Items.Add("Pagada");
-            cmbEstadoFactura.Items.Add("Anulada");
+            ConfigurarGrid();
+            CargarFacturas();
         }
-
-        private void EstadoInicial()
+        private void ConfigurarGrid()
         {
-            HabilitarControles(false);
-            LimpiarControles();
-            btnAgregar.Enabled = true;
-            btnAplicar.Enabled = false;
-            btnLimpiar.Enabled = false;
-            btnBuscar.Enabled = true;
-            dgvFacturas.Enabled = true;
-            cmbProyecto.Visible = false;
-            esNuevo = false;
-            idFacturaSeleccionada = 0;
+            dgvFacturas.AutoGenerateColumns = false;
+            dgvFacturas.Columns.Clear();
+
+            dgvFacturas.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "ID", DataPropertyName = "IdFactura", Width = 50 });
+            dgvFacturas.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "N° Factura", DataPropertyName = "NumFactura", Width = 100 });
+            dgvFacturas.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Fecha", DataPropertyName = "FechaFactura", Width = 80, DefaultCellStyle = new DataGridViewCellStyle { Format = "dd/MM/yyyy" } });
+            dgvFacturas.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Proyecto", DataPropertyName = "NomProyecto", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            dgvFacturas.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Cliente", DataPropertyName = "NomCliente", Width = 150 });
+            dgvFacturas.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Total", DataPropertyName = "PrecioFactura", Width = 90, DefaultCellStyle = new DataGridViewCellStyle { Format = "N2", Alignment = DataGridViewContentAlignment.MiddleRight } });
+            dgvFacturas.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Estado", DataPropertyName = "Estado", Width = 80 });
         }
-
-        private void HabilitarControles(bool habilitar)
-        {
-            txtCodigo.Enabled = habilitar;
-            txtPrecio.Enabled = habilitar;
-            cmbEstadoFactura.Enabled = habilitar;
-            txtObservaciones.Enabled = habilitar;
-        }
-
-        private void LimpiarControles()
-        {
-            txtCodigo.Text = "";
-            txtPrecio.Text = "0.00";
-            cmbEstadoFactura.SelectedIndex = -1;
-            txtObservaciones.Text = "";
-            cmbProyecto.DataSource = null;
-            idFacturaSeleccionada = 0;
-            fechaFacturaSeleccionada = DateTime.MinValue;
-        }
-
-        private void CargarGrid()
-        {
-            if (dgvFacturas.Columns.Contains("IdFactura"))
-            {
-                dgvFacturas.Columns["IdFactura"].Visible = false;
-            }
-            if (dgvFacturas.Columns.Contains("Observaciones"))
-            {
-                dgvFacturas.Columns["Observaciones"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            }
-        }
-
-        private void CargarComboProyectos()
-        {
-            cmbProyecto.DisplayMember = "NomProyecto";
-            cmbProyecto.ValueMember = "IdProyecto";
-            cmbProyecto.SelectedIndex = -1;
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            EstadoInicial();
-
-            esNuevo = true;
-
-            HabilitarControles(true);
-
-            btnAgregar.Enabled = false;
-            btnAplicar.Enabled = true;
-            btnLimpiar.Enabled = true;
-            btnBuscar.Enabled = false;
-            dgvFacturas.Enabled = false;
-
-            cmbProyecto.Visible = true;
-            CargarComboProyectos();
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            EstadoInicial();
-        }
-
-        private void btnAplicar_Click(object sender, EventArgs e)
+        private void CargarFacturas()
         {
             try
             {
-                entFactura fac = new entFactura();
-                fac.NumFactura = txtCodigo.Text.Trim();
-                fac.PrecioFactura = decimal.Parse(txtPrecio.Text.Trim(), CultureInfo.InvariantCulture);
-                fac.Estado = cmbEstadoFactura.Text;
-
-                bool resultado = false;
-
-                if (esNuevo)
-                {
-                    if (cmbProyecto.SelectedValue == null)
-                    {
-                        MessageBox.Show("Debe seleccionar un proyecto válido de la lista.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    // Aseguramos la conversión
-                    fac.IdProyecto = Convert.ToInt32(cmbProyecto.SelectedValue);
-                    fac.FechaFactura = DateTime.Now;
-
-                }
-                else
-                {
-                    fac.IdFactura = idFacturaSeleccionada;
-                    fac.FechaFactura = fechaFacturaSeleccionada;
-                }
-
-                if (resultado)
-                {
-                    MessageBox.Show("Datos guardados correctamente.", "Éxito");
-                    CargarGrid();
-                    EstadoInicial();
-                }
+                dgvFacturas.DataSource = _logFactura.Listar();
             }
-            catch (FormatException)
-            {
-                MessageBox.Show("El precio debe ser un número válido (ej: 2000.00).", "Error de Formato");
-                txtPrecio.Focus();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error detectado: " + ex.Message, "Error Crítico");
-            }
+            catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void btnVer_Click(object sender, EventArgs e)
         {
-            string codigoBuscado = txtCodigo.Text.Trim();
-            if (string.IsNullOrEmpty(codigoBuscado))
+            if (dgvFacturas.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Ingrese un código para buscar.", "Aviso");
+                MessageBox.Show("Seleccione una factura.", "Aviso");
                 return;
             }
+            var item = (entFacturaVista)dgvFacturas.SelectedRows[0].DataBoundItem;
 
-            foreach (DataGridViewRow row in dgvFacturas.Rows)
-            {
-                if (row.Cells["Codigo"].Value != null && row.Cells["Codigo"].Value.ToString().Equals(codigoBuscado, StringComparison.OrdinalIgnoreCase))
-                {
-                    dgvFacturas.ClearSelection();
-                    row.Selected = true;
-                    dgvFacturas.CurrentCell = row.Cells["Codigo"];
-                    CargarDatosDesdeGrid(row);
-                    return;
-                }
-            }
-            MessageBox.Show("No se encontró ninguna factura con ese código.", "Búsqueda fallida");
-        }
-
-        private void CargarDatosDesdeGrid(DataGridViewRow row)
-        {
-            EstadoInicial();
-            HabilitarControles(true);
-            btnAgregar.Enabled = false;
-            btnAplicar.Enabled = true;
-            btnLimpiar.Enabled = true;
-            btnBuscar.Enabled = false;
-
-            idFacturaSeleccionada = (int)row.Cells["IdFactura"].Value;
-            txtCodigo.Text = row.Cells["Codigo"].Value.ToString();
-            txtPrecio.Text = string.Format(CultureInfo.InvariantCulture, "{0:F2}", row.Cells["Precio"].Value);
-            cmbEstadoFactura.Text = row.Cells["Estado"].Value.ToString();
-            txtObservaciones.Text = row.Cells["Observaciones"].Value.ToString();
-            fechaFacturaSeleccionada = (DateTime)row.Cells["Fecha"].Value;
+            G_VerFactura visor = new G_VerFactura(item.IdFactura);
+            visor.Show();
+            this.Hide();
         }
 
         private void dgvFacturas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && !esNuevo)
-            {
-                CargarDatosDesdeGrid(dgvFacturas.Rows[e.RowIndex]);
-            }
         }
 
         private void btn_proyectos_Click(object sender, EventArgs e)
@@ -246,14 +106,6 @@ namespace Ingemat
             this.Hide();
             pantalla.Show();
         }
-
-        private void btn_ver_Click(object sender, EventArgs e)
-        {
-            G_VerFactura pantalla = new G_VerFactura();
-            this.Hide();
-            pantalla.Show();
-        }
-
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();

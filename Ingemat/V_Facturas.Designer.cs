@@ -28,14 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_ver = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.dgvFacturas = new System.Windows.Forms.DataGridView();
             this.btn_limpiar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -45,7 +39,6 @@
             this.Estado = new System.Windows.Forms.ComboBox();
             this.Txt_Dni = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_ot = new System.Windows.Forms.Button();
             this.BTinicio = new System.Windows.Forms.Button();
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.btn_nuevaProforma = new System.Windows.Forms.Button();
@@ -54,84 +47,35 @@
             this.btn_proformas = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.btn_aplicar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btn_ver
+            // btnVer
             // 
-            this.btn_ver.Location = new System.Drawing.Point(1671, 175);
-            this.btn_ver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_ver.Name = "btn_ver";
-            this.btn_ver.Size = new System.Drawing.Size(100, 28);
-            this.btn_ver.TabIndex = 331;
-            this.btn_ver.Text = "Ver";
-            this.btn_ver.UseVisualStyleBackColor = true;
-            this.btn_ver.Click += new System.EventHandler(this.btn_ver_Click);
+            this.btnVer.Location = new System.Drawing.Point(1671, 175);
+            this.btnVer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(100, 28);
+            this.btnVer.TabIndex = 331;
+            this.btnVer.Text = "Ver";
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
-            // dataGridView1
+            // dgvFacturas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(377, 214);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1419, 519);
-            this.dataGridView1.TabIndex = 330;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "IdFactura";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre Proyecto";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 400;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Fecha";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 120;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Estudio";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 150;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Precio";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Estado";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
+            this.dgvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFacturas.Location = new System.Drawing.Point(377, 214);
+            this.dgvFacturas.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvFacturas.Name = "dgvFacturas";
+            this.dgvFacturas.RowHeadersWidth = 51;
+            this.dgvFacturas.Size = new System.Drawing.Size(1419, 519);
+            this.dgvFacturas.TabIndex = 330;
             // 
             // btn_limpiar
             // 
             this.btn_limpiar.Location = new System.Drawing.Point(1141, 161);
-            this.btn_limpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_limpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_limpiar.Name = "btn_limpiar";
             this.btn_limpiar.Size = new System.Drawing.Size(100, 28);
             this.btn_limpiar.TabIndex = 329;
@@ -226,7 +170,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.btn_ot);
             this.panel1.Controls.Add(this.BTinicio);
             this.panel1.Controls.Add(this.btn_cerrar);
             this.panel1.Controls.Add(this.btn_nuevaProforma);
@@ -239,23 +182,6 @@
             this.panel1.Size = new System.Drawing.Size(289, 815);
             this.panel1.TabIndex = 319;
             // 
-            // btn_ot
-            // 
-            this.btn_ot.BackColor = System.Drawing.Color.Transparent;
-            this.btn_ot.FlatAppearance.BorderSize = 0;
-            this.btn_ot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_ot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ot.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ot.ForeColor = System.Drawing.Color.White;
-            this.btn_ot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ot.Location = new System.Drawing.Point(12, 514);
-            this.btn_ot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_ot.Name = "btn_ot";
-            this.btn_ot.Size = new System.Drawing.Size(265, 59);
-            this.btn_ot.TabIndex = 164;
-            this.btn_ot.Text = "Ordenes De Trabajo";
-            this.btn_ot.UseVisualStyleBackColor = false;
-            // 
             // BTinicio
             // 
             this.BTinicio.BackColor = System.Drawing.Color.Transparent;
@@ -267,7 +193,7 @@
             this.BTinicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTinicio.ForeColor = System.Drawing.Color.White;
             this.BTinicio.Location = new System.Drawing.Point(12, 15);
-            this.BTinicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTinicio.Margin = new System.Windows.Forms.Padding(4);
             this.BTinicio.Name = "BTinicio";
             this.BTinicio.Size = new System.Drawing.Size(260, 185);
             this.BTinicio.TabIndex = 9;
@@ -370,7 +296,7 @@
             this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_buscar.ForeColor = System.Drawing.Color.Gray;
             this.btn_buscar.Location = new System.Drawing.Point(1219, 98);
-            this.btn_buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_buscar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(60, 36);
             this.btn_buscar.TabIndex = 321;
@@ -391,8 +317,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1899, 814);
-            this.Controls.Add(this.btn_ver);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnVer);
+            this.Controls.Add(this.dgvFacturas);
             this.Controls.Add(this.btn_limpiar);
             this.Controls.Add(this.btn_aplicar);
             this.Controls.Add(this.label3);
@@ -405,9 +331,10 @@
             this.Controls.Add(this.Txt_Dni);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "V_Facturas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.V_Facturas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -415,8 +342,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btn_ver;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.DataGridView dgvFacturas;
         private System.Windows.Forms.Button btn_limpiar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
@@ -427,19 +354,12 @@
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.TextBox Txt_Dni;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_ot;
         private System.Windows.Forms.Button BTinicio;
         private System.Windows.Forms.Button btn_cerrar;
         private System.Windows.Forms.Button btn_nuevaProforma;
         private System.Windows.Forms.Button btn_facturas;
         private System.Windows.Forms.Button btn_os;
         private System.Windows.Forms.Button btn_proformas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button btn_aplicar;
     }
 }
