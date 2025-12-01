@@ -36,7 +36,22 @@
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.btnEmpresa = new System.Windows.Forms.Button();
             this.btn_proyectos = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtNombreCliente = new System.Windows.Forms.TextBox();
+            this.txtNumeroDocumento = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.cmbTipoDocumento = new System.Windows.Forms.ComboBox();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.btnEditarCliente = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -45,11 +60,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Purple;
-            this.label4.Location = new System.Drawing.Point(856, 15);
+            this.label4.Location = new System.Drawing.Point(989, 38);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(376, 44);
+            this.label4.Size = new System.Drawing.Size(163, 44);
             this.label4.TabIndex = 167;
-            this.label4.Text = "Ordenes De Trabajo";
+            this.label4.Text = "Clientes";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel1
@@ -136,6 +151,7 @@
             this.btn_cerrar.TabIndex = 4;
             this.btn_cerrar.Text = "Cerrar Sesion";
             this.btn_cerrar.UseVisualStyleBackColor = false;
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
             // btnEmpresa
             // 
@@ -173,18 +189,166 @@
             this.btn_proyectos.UseVisualStyleBackColor = false;
             this.btn_proyectos.Click += new System.EventHandler(this.btn_proyectos_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(368, 153);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 16);
+            this.label1.TabIndex = 176;
+            this.label1.Text = "Nombre del Cliente:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(368, 232);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 16);
+            this.label2.TabIndex = 177;
+            this.label2.Text = "Tipo de Documento:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(743, 153);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 16);
+            this.label3.TabIndex = 178;
+            this.label3.Text = "Número Documento:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(739, 232);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(134, 16);
+            this.label5.TabIndex = 179;
+            this.label5.Text = "Número de Teléfono:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1126, 153);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 16);
+            this.label6.TabIndex = 180;
+            this.label6.Text = "Correo:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // txtNombreCliente
+            // 
+            this.txtNombreCliente.Location = new System.Drawing.Point(499, 147);
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.Size = new System.Drawing.Size(238, 22);
+            this.txtNombreCliente.TabIndex = 181;
+            this.txtNombreCliente.TextChanged += new System.EventHandler(this.txtNombreCliente_TextChanged);
+            // 
+            // txtNumeroDocumento
+            // 
+            this.txtNumeroDocumento.Location = new System.Drawing.Point(879, 147);
+            this.txtNumeroDocumento.Name = "txtNumeroDocumento";
+            this.txtNumeroDocumento.Size = new System.Drawing.Size(238, 22);
+            this.txtNumeroDocumento.TabIndex = 182;
+            this.txtNumeroDocumento.TextChanged += new System.EventHandler(this.txtNumeroDocumento_TextChanged);
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(1183, 147);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(260, 22);
+            this.txtCorreo.TabIndex = 183;
+            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(879, 226);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(238, 22);
+            this.txtTelefono.TabIndex = 184;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
+            // 
+            // cmbTipoDocumento
+            // 
+            this.cmbTipoDocumento.FormattingEnabled = true;
+            this.cmbTipoDocumento.Location = new System.Drawing.Point(499, 224);
+            this.cmbTipoDocumento.Name = "cmbTipoDocumento";
+            this.cmbTipoDocumento.Size = new System.Drawing.Size(93, 24);
+            this.cmbTipoDocumento.TabIndex = 185;
+            // 
+            // dgvClientes
+            // 
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(371, 280);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.RowHeadersWidth = 51;
+            this.dgvClientes.RowTemplate.Height = 24;
+            this.dgvClientes.Size = new System.Drawing.Size(1417, 472);
+            this.dgvClientes.TabIndex = 186;
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
+            this.dgvClientes.Click += new System.EventHandler(this.dgvClientes_SelectionChanged);
+            // 
+            // btnEditarCliente
+            // 
+            this.btnEditarCliente.Location = new System.Drawing.Point(1377, 232);
+            this.btnEditarCliente.Name = "btnEditarCliente";
+            this.btnEditarCliente.Size = new System.Drawing.Size(133, 23);
+            this.btnEditarCliente.TabIndex = 187;
+            this.btnEditarCliente.Text = "Editar Cliente";
+            this.btnEditarCliente.UseVisualStyleBackColor = true;
+            this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(1283, 232);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 188;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(1531, 232);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(97, 23);
+            this.btnGuardar.TabIndex = 189;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // G_Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1899, 814);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnEditarCliente);
+            this.Controls.Add(this.dgvClientes);
+            this.Controls.Add(this.cmbTipoDocumento);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.txtNumeroDocumento);
+            this.Controls.Add(this.txtNombreCliente);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "G_Clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.G_Clientes_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +363,19 @@
         private System.Windows.Forms.Button btnEmpresa;
         private System.Windows.Forms.Button btn_proyectos;
         private System.Windows.Forms.Button btnCostos;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtNombreCliente;
+        private System.Windows.Forms.TextBox txtNumeroDocumento;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.ComboBox cmbTipoDocumento;
+        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.Button btnEditarCliente;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

@@ -36,7 +36,22 @@
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.btnEmpresa = new System.Windows.Forms.Button();
             this.btn_proyectos = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtNombreEmpresa = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtRuc = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEditarEmpresa = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvEmpresas = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -45,11 +60,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Purple;
-            this.label4.Location = new System.Drawing.Point(856, 15);
+            this.label4.Location = new System.Drawing.Point(1003, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(376, 44);
+            this.label4.Size = new System.Drawing.Size(189, 44);
             this.label4.TabIndex = 167;
-            this.label4.Text = "Ordenes De Trabajo";
+            this.label4.Text = "Empresas";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel1
@@ -136,6 +151,7 @@
             this.btn_cerrar.TabIndex = 4;
             this.btn_cerrar.Text = "Cerrar Sesion";
             this.btn_cerrar.UseVisualStyleBackColor = false;
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
             // btnEmpresa
             // 
@@ -173,18 +189,154 @@
             this.btn_proyectos.UseVisualStyleBackColor = false;
             this.btn_proyectos.Click += new System.EventHandler(this.btn_proyectos_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(354, 122);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 16);
+            this.label1.TabIndex = 177;
+            this.label1.Text = "Nombre Empresa:";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(835, 116);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(217, 22);
+            this.txtTelefono.TabIndex = 184;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(765, 122);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 16);
+            this.label3.TabIndex = 183;
+            this.label3.Text = "Teléfono:";
+            // 
+            // txtNombreEmpresa
+            // 
+            this.txtNombreEmpresa.Location = new System.Drawing.Point(477, 116);
+            this.txtNombreEmpresa.Name = "txtNombreEmpresa";
+            this.txtNombreEmpresa.Size = new System.Drawing.Size(238, 22);
+            this.txtNombreEmpresa.TabIndex = 185;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(796, 189);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(238, 22);
+            this.txtDireccion.TabIndex = 186;
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(1198, 186);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(324, 22);
+            this.txtCorreo.TabIndex = 187;
+            // 
+            // txtRuc
+            // 
+            this.txtRuc.Location = new System.Drawing.Point(399, 192);
+            this.txtRuc.Name = "txtRuc";
+            this.txtRuc.Size = new System.Drawing.Size(221, 22);
+            this.txtRuc.TabIndex = 188;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(1080, 237);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 190;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnEditarEmpresa
+            // 
+            this.btnEditarEmpresa.Location = new System.Drawing.Point(1170, 237);
+            this.btnEditarEmpresa.Name = "btnEditarEmpresa";
+            this.btnEditarEmpresa.Size = new System.Drawing.Size(133, 23);
+            this.btnEditarEmpresa.TabIndex = 189;
+            this.btnEditarEmpresa.Text = "Editar Empresa";
+            this.btnEditarEmpresa.UseVisualStyleBackColor = true;
+            this.btnEditarEmpresa.Click += new System.EventHandler(this.btnEditarEmpresa_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(1309, 237);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(97, 23);
+            this.btnGuardar.TabIndex = 191;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1083, 192);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 16);
+            this.label6.TabIndex = 194;
+            this.label6.Text = "Correo Empresa:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(665, 195);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(125, 16);
+            this.label5.TabIndex = 193;
+            this.label5.Text = "Dirección Empresa:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(354, 198);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 16);
+            this.label2.TabIndex = 192;
+            this.label2.Text = "RUC:";
+            // 
+            // dgvEmpresas
+            // 
+            this.dgvEmpresas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpresas.Location = new System.Drawing.Point(380, 284);
+            this.dgvEmpresas.Name = "dgvEmpresas";
+            this.dgvEmpresas.RowHeadersWidth = 51;
+            this.dgvEmpresas.RowTemplate.Height = 24;
+            this.dgvEmpresas.Size = new System.Drawing.Size(1324, 493);
+            this.dgvEmpresas.TabIndex = 195;
+            // 
             // G_Empresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1899, 814);
+            this.Controls.Add(this.dgvEmpresas);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnEditarEmpresa);
+            this.Controls.Add(this.txtRuc);
+            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.txtNombreEmpresa);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "G_Empresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.G_Empresa_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpresas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +351,19 @@
         private System.Windows.Forms.Button btnEmpresa;
         private System.Windows.Forms.Button btn_proyectos;
         private System.Windows.Forms.Button btnCostos;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtNombreEmpresa;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.TextBox txtRuc;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnEditarEmpresa;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvEmpresas;
     }
 }

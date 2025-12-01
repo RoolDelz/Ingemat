@@ -15,5 +15,12 @@ namespace CapaLogica
         {
             return datos.ObtenerTiposGasto();
         }
+        public bool Guardar(entTipoGasto tipo)
+        {
+            if (tipo.IdGastoTipo == 0)
+                return datos.AgregarTipoGasto(tipo);
+            else
+                return datos.EditarTipoGasto(tipo);
+        }
     }
 }

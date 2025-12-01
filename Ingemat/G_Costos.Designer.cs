@@ -37,28 +37,30 @@
             this.btnEmpresa = new System.Windows.Forms.Button();
             this.btn_proyectos = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnCancelarTipo = new System.Windows.Forms.Button();
+            this.btnEditarTipo = new System.Windows.Forms.Button();
+            this.btnAgregarTipo = new System.Windows.Forms.Button();
+            this.dgvTipos = new System.Windows.Forms.DataGridView();
+            this.txtTipoGasto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnAgregarT = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbTipo = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnEditarGasto = new System.Windows.Forms.Button();
+            this.btnAgregarGasto = new System.Windows.Forms.Button();
+            this.btnCancelarGasto = new System.Windows.Forms.Button();
+            this.dgvGastos = new System.Windows.Forms.DataGridView();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.txtNombreGasto = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbTipoGastoSel = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnGuardarTipo = new System.Windows.Forms.Button();
+            this.btnGuardarGasto = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipos)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGastos)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -158,6 +160,7 @@
             this.btn_cerrar.TabIndex = 4;
             this.btn_cerrar.Text = "Cerrar Sesion";
             this.btn_cerrar.UseVisualStyleBackColor = false;
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
             // btnEmpresa
             // 
@@ -197,11 +200,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.btnAgregarT);
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btnGuardarTipo);
+            this.groupBox1.Controls.Add(this.btnCancelarTipo);
+            this.groupBox1.Controls.Add(this.btnEditarTipo);
+            this.groupBox1.Controls.Add(this.btnAgregarTipo);
+            this.groupBox1.Controls.Add(this.dgvTipos);
+            this.groupBox1.Controls.Add(this.txtTipoGasto);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(417, 151);
             this.groupBox1.Name = "groupBox1";
@@ -210,24 +214,52 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo gastos";
             // 
-            // groupBox2
+            // btnCancelarTipo
             // 
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.cmbTipo);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(1022, 151);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(581, 603);
-            this.groupBox2.TabIndex = 177;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Gastos Adicionales";
+            this.btnCancelarTipo.Location = new System.Drawing.Point(107, 106);
+            this.btnCancelarTipo.Name = "btnCancelarTipo";
+            this.btnCancelarTipo.Size = new System.Drawing.Size(107, 23);
+            this.btnCancelarTipo.TabIndex = 5;
+            this.btnCancelarTipo.Text = "Cancelar";
+            this.btnCancelarTipo.UseVisualStyleBackColor = true;
+            this.btnCancelarTipo.Click += new System.EventHandler(this.btnCancelarTipo_Click);
+            // 
+            // btnEditarTipo
+            // 
+            this.btnEditarTipo.Location = new System.Drawing.Point(352, 105);
+            this.btnEditarTipo.Name = "btnEditarTipo";
+            this.btnEditarTipo.Size = new System.Drawing.Size(107, 23);
+            this.btnEditarTipo.TabIndex = 4;
+            this.btnEditarTipo.Text = "Editar Tipo";
+            this.btnEditarTipo.UseVisualStyleBackColor = true;
+            this.btnEditarTipo.Click += new System.EventHandler(this.btnEditarTipo_Click);
+            // 
+            // btnAgregarTipo
+            // 
+            this.btnAgregarTipo.Location = new System.Drawing.Point(229, 106);
+            this.btnAgregarTipo.Name = "btnAgregarTipo";
+            this.btnAgregarTipo.Size = new System.Drawing.Size(107, 23);
+            this.btnAgregarTipo.TabIndex = 3;
+            this.btnAgregarTipo.Text = "Agregar Tipo";
+            this.btnAgregarTipo.UseVisualStyleBackColor = true;
+            this.btnAgregarTipo.Click += new System.EventHandler(this.btnAgregarTipo_Click);
+            // 
+            // dgvTipos
+            // 
+            this.dgvTipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTipos.Location = new System.Drawing.Point(66, 168);
+            this.dgvTipos.Name = "dgvTipos";
+            this.dgvTipos.RowHeadersWidth = 51;
+            this.dgvTipos.RowTemplate.Height = 24;
+            this.dgvTipos.Size = new System.Drawing.Size(407, 386);
+            this.dgvTipos.TabIndex = 2;
+            // 
+            // txtTipoGasto
+            // 
+            this.txtTipoGasto.Location = new System.Drawing.Point(165, 55);
+            this.txtTipoGasto.Name = "txtTipoGasto";
+            this.txtTipoGasto.Size = new System.Drawing.Size(308, 22);
+            this.txtTipoGasto.TabIndex = 1;
             // 
             // label1
             // 
@@ -238,82 +270,72 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo de gasto:";
             // 
-            // textBox1
+            // groupBox2
             // 
-            this.textBox1.Location = new System.Drawing.Point(165, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(308, 22);
-            this.textBox1.TabIndex = 1;
+            this.groupBox2.Controls.Add(this.btnGuardarGasto);
+            this.groupBox2.Controls.Add(this.btnEditarGasto);
+            this.groupBox2.Controls.Add(this.btnAgregarGasto);
+            this.groupBox2.Controls.Add(this.btnCancelarGasto);
+            this.groupBox2.Controls.Add(this.dgvGastos);
+            this.groupBox2.Controls.Add(this.txtPrecio);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.txtNombreGasto);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.cmbTipoGastoSel);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Location = new System.Drawing.Point(1022, 151);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(581, 603);
+            this.groupBox2.TabIndex = 177;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Gastos Adicionales";
             // 
-            // dataGridView1
+            // btnEditarGasto
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(66, 168);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(407, 386);
-            this.dataGridView1.TabIndex = 2;
+            this.btnEditarGasto.Location = new System.Drawing.Point(357, 209);
+            this.btnEditarGasto.Name = "btnEditarGasto";
+            this.btnEditarGasto.Size = new System.Drawing.Size(169, 23);
+            this.btnEditarGasto.TabIndex = 12;
+            this.btnEditarGasto.Text = "Editar Gasto Adicioal";
+            this.btnEditarGasto.UseVisualStyleBackColor = true;
+            this.btnEditarGasto.Click += new System.EventHandler(this.btnEditarGasto_Click);
             // 
-            // btnAgregarT
+            // btnAgregarGasto
             // 
-            this.btnAgregarT.Location = new System.Drawing.Point(229, 106);
-            this.btnAgregarT.Name = "btnAgregarT";
-            this.btnAgregarT.Size = new System.Drawing.Size(107, 23);
-            this.btnAgregarT.TabIndex = 3;
-            this.btnAgregarT.Text = "Agregar Tipo";
-            this.btnAgregarT.UseVisualStyleBackColor = true;
+            this.btnAgregarGasto.Location = new System.Drawing.Point(182, 209);
+            this.btnAgregarGasto.Name = "btnAgregarGasto";
+            this.btnAgregarGasto.Size = new System.Drawing.Size(169, 23);
+            this.btnAgregarGasto.TabIndex = 6;
+            this.btnAgregarGasto.Text = "Agregar Gasto Adicioal";
+            this.btnAgregarGasto.UseVisualStyleBackColor = true;
+            this.btnAgregarGasto.Click += new System.EventHandler(this.btnAgregarGasto_Click);
             // 
-            // button1
+            // btnCancelarGasto
             // 
-            this.button1.Location = new System.Drawing.Point(352, 105);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Editar Tipo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCancelarGasto.Location = new System.Drawing.Point(69, 209);
+            this.btnCancelarGasto.Name = "btnCancelarGasto";
+            this.btnCancelarGasto.Size = new System.Drawing.Size(107, 23);
+            this.btnCancelarGasto.TabIndex = 6;
+            this.btnCancelarGasto.Text = "Cancelar";
+            this.btnCancelarGasto.UseVisualStyleBackColor = true;
+            this.btnCancelarGasto.Click += new System.EventHandler(this.btnCancelarGasto_Click);
             // 
-            // label2
+            // dgvGastos
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 16);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Tipo de gasto:";
+            this.dgvGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGastos.Location = new System.Drawing.Point(31, 251);
+            this.dgvGastos.Name = "dgvGastos";
+            this.dgvGastos.RowHeadersWidth = 51;
+            this.dgvGastos.RowTemplate.Height = 24;
+            this.dgvGastos.Size = new System.Drawing.Size(519, 330);
+            this.dgvGastos.TabIndex = 11;
             // 
-            // cmbTipo
+            // txtPrecio
             // 
-            this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(182, 55);
-            this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(293, 24);
-            this.cmbTipo.TabIndex = 6;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(107, 106);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 16);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Nombre Gasto Adicional:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(203, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(285, 22);
-            this.textBox2.TabIndex = 8;
+            this.txtPrecio.Location = new System.Drawing.Point(161, 154);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(135, 22);
+            this.txtPrecio.TabIndex = 10;
             // 
             // label5
             // 
@@ -324,49 +346,58 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Precio:";
             // 
-            // textBox3
+            // txtNombreGasto
             // 
-            this.textBox3.Location = new System.Drawing.Point(161, 154);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(135, 22);
-            this.textBox3.TabIndex = 10;
+            this.txtNombreGasto.Location = new System.Drawing.Point(203, 110);
+            this.txtNombreGasto.Name = "txtNombreGasto";
+            this.txtNombreGasto.Size = new System.Drawing.Size(285, 22);
+            this.txtNombreGasto.TabIndex = 8;
             // 
-            // dataGridView2
+            // label3
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(31, 251);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(519, 330);
-            this.dataGridView2.TabIndex = 11;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(28, 116);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(157, 16);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Nombre Gasto Adicional:";
             // 
-            // button3
+            // cmbTipoGastoSel
             // 
-            this.button3.Location = new System.Drawing.Point(69, 209);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(107, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.cmbTipoGastoSel.FormattingEnabled = true;
+            this.cmbTipoGastoSel.Location = new System.Drawing.Point(182, 55);
+            this.cmbTipoGastoSel.Name = "cmbTipoGastoSel";
+            this.cmbTipoGastoSel.Size = new System.Drawing.Size(293, 24);
+            this.cmbTipoGastoSel.TabIndex = 6;
             // 
-            // button4
+            // label2
             // 
-            this.button4.Location = new System.Drawing.Point(182, 209);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(169, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Agregar Gasto Adicioal";
-            this.button4.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(82, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 16);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Tipo de gasto:";
             // 
-            // button5
+            // btnGuardarTipo
             // 
-            this.button5.Location = new System.Drawing.Point(357, 209);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(169, 23);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Editar Gasto Adicioal";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnGuardarTipo.Location = new System.Drawing.Point(352, 139);
+            this.btnGuardarTipo.Name = "btnGuardarTipo";
+            this.btnGuardarTipo.Size = new System.Drawing.Size(107, 23);
+            this.btnGuardarTipo.TabIndex = 6;
+            this.btnGuardarTipo.Text = "Guardar";
+            this.btnGuardarTipo.UseVisualStyleBackColor = true;
+            this.btnGuardarTipo.Click += new System.EventHandler(this.btnGuardarTipo_Click);
+            // 
+            // btnGuardarGasto
+            // 
+            this.btnGuardarGasto.Location = new System.Drawing.Point(419, 180);
+            this.btnGuardarGasto.Name = "btnGuardarGasto";
+            this.btnGuardarGasto.Size = new System.Drawing.Size(107, 23);
+            this.btnGuardarGasto.TabIndex = 7;
+            this.btnGuardarGasto.Text = "Guardar";
+            this.btnGuardarGasto.UseVisualStyleBackColor = true;
+            this.btnGuardarGasto.Click += new System.EventHandler(this.btnGuardarGasto_Click);
             // 
             // G_Costos
             // 
@@ -381,13 +412,14 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "G_Costos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.G_Costos_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTipos)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGastos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,22 +435,24 @@
         private System.Windows.Forms.Button btn_proyectos;
         private System.Windows.Forms.Button btnCostos;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnAgregarT;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnEditarTipo;
+        private System.Windows.Forms.Button btnAgregarTipo;
+        private System.Windows.Forms.DataGridView dgvTipos;
+        private System.Windows.Forms.TextBox txtTipoGasto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button btnCancelarTipo;
+        private System.Windows.Forms.Button btnCancelarGasto;
+        private System.Windows.Forms.DataGridView dgvGastos;
+        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNombreGasto;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbTipo;
+        private System.Windows.Forms.ComboBox cmbTipoGastoSel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnEditarGasto;
+        private System.Windows.Forms.Button btnAgregarGasto;
+        private System.Windows.Forms.Button btnGuardarTipo;
+        private System.Windows.Forms.Button btnGuardarGasto;
     }
 }

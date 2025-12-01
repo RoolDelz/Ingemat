@@ -35,5 +35,17 @@ namespace CapaLogica
                 return 0;
             }
         }
+        public List<entClienteVista> Listar()
+        {
+            return datos.ListarClientesVista();
+        }
+
+        public bool Editar(entCliente cliente)
+        {
+            if (string.IsNullOrWhiteSpace(cliente.NomCliente)) throw new Exception("El nombre no puede estar vacío.");
+            if (string.IsNullOrWhiteSpace(cliente.NDocumento)) throw new Exception("El número de documento es obligatorio.");
+
+            return datos.EditarCliente(cliente);
+        }
     }
 }

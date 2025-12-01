@@ -16,9 +16,15 @@ namespace CapaLogica
         {
             return datos.ListarEmpresas();
         }
+
+        public List<entEmpresaVista> ListarVista()
+        {
+            return datos.ListarEmpresasVista();
+        }
+
         public int InsertarEmpresa(entEmpresa empresa)
         {
-            if (string.IsNullOrWhiteSpace(empresa.NomEmpresa))
+            if (string.IsNullOrWhiteSpace(empresa.NomEmpresa))
             {
                 throw new Exception("El campo 'Empresa Solicitante' es obligatorio.");
             }
@@ -33,12 +39,21 @@ namespace CapaLogica
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al guardar la empresa: " + ex.Message);
+                throw new Exception("Error al guardar la empresa: " + ex.Message);
             }
         }
+
         public entEmpresa ObtenerPorId(int id)
         {
             return datos.ObtenerEmpresaPorId(id);
+        }
+
+        public bool Editar(entEmpresa empresa)
+        {
+            if (string.IsNullOrWhiteSpace(empresa.NomEmpresa)) throw new Exception("El nombre de la empresa es obligatorio.");
+            if (string.IsNullOrWhiteSpace(empresa.Ruc)) throw new Exception("El RUC es obligatorio.");
+
+            return datos.EditarEmpresa(empresa);
         }
     }
 }

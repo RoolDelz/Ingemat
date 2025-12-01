@@ -42,9 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="entCliente.cs" />
+    <Compile Include="entClienteVista.cs" />
     <Compile Include="entDetalleOT.cs" />
     <Compile Include="entEmpleado.cs" />
     <Compile Include="entEmpresa.cs" />
+    <Compile Include="entEmpresaVista.cs" />
     <Compile Include="entFactura.cs" />
     <Compile Include="entFormatoVista.cs" />
     <Compile Include="entGastoAdicional.cs" />

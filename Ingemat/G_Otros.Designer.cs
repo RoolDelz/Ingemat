@@ -124,6 +124,7 @@
             this.btn_cerrar.TabIndex = 4;
             this.btn_cerrar.Text = "Cerrar Sesion";
             this.btn_cerrar.UseVisualStyleBackColor = false;
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
             // btnCostos
             // 

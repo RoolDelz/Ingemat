@@ -43,5 +43,10 @@ namespace Ingemat
             this.Hide();
             pantalla.Show();
         }
+
+        private void btn_cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
