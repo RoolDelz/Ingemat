@@ -72,6 +72,24 @@
     <Compile Include="G_AprobarOS.Designer.cs">
       <DependentUpon>G_AprobarOS.cs</DependentUpon>
     </Compile>
+    <Compile Include="G_Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_Clientes.Designer.cs">
+      <DependentUpon>G_Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="G_Costos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_Costos.Designer.cs">
+      <DependentUpon>G_Costos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="G_Empresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_Empresa.Designer.cs">
+      <DependentUpon>G_Empresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="G_Facturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +107,12 @@
     </Compile>
     <Compile Include="G_VistaOS.Designer.cs">
       <DependentUpon>G_VistaOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="G_Otros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="G_Otros.Designer.cs">
+      <DependentUpon>G_Otros.cs</DependentUpon>
     </Compile>
     <Compile Include="T_Actividades.cs">
       <SubType>Form</SubType>
@@ -185,8 +209,20 @@
     <EmbeddedResource Include="G_AprobarOS.resx">
       <DependentUpon>G_AprobarOS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="G_Clientes.resx">
+      <DependentUpon>G_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="G_Costos.resx">
+      <DependentUpon>G_Costos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="G_Empresa.resx">
+      <DependentUpon>G_Empresa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="G_Facturas.resx">
       <DependentUpon>G_Facturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="G_Otros.resx">
+      <DependentUpon>G_Otros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="G_VerFactura.resx">
       <DependentUpon>G_VerFactura.cs</DependentUpon>

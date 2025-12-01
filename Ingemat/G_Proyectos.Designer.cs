@@ -42,6 +42,7 @@
             this.btn_formatos = new System.Windows.Forms.Button();
             this.btn_ot = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnOtros = new System.Windows.Forms.Button();
             this.btn_facturas = new System.Windows.Forms.Button();
             this.BTinicio = new System.Windows.Forms.Button();
             this.btn_aplicar = new System.Windows.Forms.Button();
@@ -254,6 +255,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.btnOtros);
             this.panel1.Controls.Add(this.btn_facturas);
             this.panel1.Controls.Add(this.btn_ot);
             this.panel1.Controls.Add(this.BTinicio);
@@ -267,6 +269,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(271, 828);
             this.panel1.TabIndex = 174;
+            // 
+            // btnOtros
+            // 
+            this.btnOtros.BackColor = System.Drawing.Color.Transparent;
+            this.btnOtros.FlatAppearance.BorderSize = 0;
+            this.btnOtros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnOtros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOtros.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOtros.ForeColor = System.Drawing.Color.White;
+            this.btnOtros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOtros.Location = new System.Drawing.Point(6, 652);
+            this.btnOtros.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOtros.Name = "btnOtros";
+            this.btnOtros.Size = new System.Drawing.Size(249, 60);
+            this.btnOtros.TabIndex = 200;
+            this.btnOtros.Text = "Otros";
+            this.btnOtros.UseVisualStyleBackColor = false;
+            this.btnOtros.Click += new System.EventHandler(this.btnOtros_Click);
             // 
             // btn_facturas
             // 
@@ -424,6 +444,7 @@
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btn_facturas;
         private System.Windows.Forms.Button btnIniciar;
+        private System.Windows.Forms.Button btnOtros;
     }
 }
 

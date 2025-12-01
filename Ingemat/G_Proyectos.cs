@@ -164,5 +164,12 @@ namespace Ingemat
             this.Hide();
             pantalla.Show();
         }
+
+        private void btnOtros_Click(object sender, EventArgs e)
+        {
+            G_Otros pantalla = new G_Otros();
+            this.Hide();
+            pantalla.Show();
+        }
     }
 }
