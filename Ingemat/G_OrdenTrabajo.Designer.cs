@@ -38,14 +38,7 @@
             this.btn_proyectos = new System.Windows.Forms.Button();
             this.btn_formatos = new System.Windows.Forms.Button();
             this.btn_os = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvOrdenesTrabajo = new System.Windows.Forms.DataGridView();
             this.btn_limpiar = new System.Windows.Forms.Button();
             this.btn_aplicar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -54,10 +47,13 @@
             this.DNI = new System.Windows.Forms.Label();
             this.Estado = new System.Windows.Forms.ComboBox();
             this.Txt_Dni = new System.Windows.Forms.TextBox();
-            this.btn_editar = new System.Windows.Forms.Button();
+            this.btnAsignar = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbTrabajador = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenesTrabajo)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -137,7 +133,7 @@
             this.BTinicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTinicio.ForeColor = System.Drawing.Color.White;
             this.BTinicio.Location = new System.Drawing.Point(12, 15);
-            this.BTinicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTinicio.Margin = new System.Windows.Forms.Padding(4);
             this.BTinicio.Name = "BTinicio";
             this.BTinicio.Size = new System.Drawing.Size(260, 185);
             this.BTinicio.TabIndex = 9;
@@ -233,79 +229,20 @@
             this.btn_os.UseVisualStyleBackColor = false;
             this.btn_os.Click += new System.EventHandler(this.btn_os_Click);
             // 
-            // dataGridView1
+            // dgvOrdenesTrabajo
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column5,
-            this.Column7,
-            this.Column4,
-            this.Column6,
-            this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(315, 239);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1552, 538);
-            this.dataGridView1.TabIndex = 203;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "IdOrdenTrabajo";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre Orden De Trabajo";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 400;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Estudio";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 150;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Encargado";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column7.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Fecha Inicio";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 120;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Fecha Fin";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Estado";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
+            this.dgvOrdenesTrabajo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrdenesTrabajo.Location = new System.Drawing.Point(315, 239);
+            this.dgvOrdenesTrabajo.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvOrdenesTrabajo.Name = "dgvOrdenesTrabajo";
+            this.dgvOrdenesTrabajo.RowHeadersWidth = 51;
+            this.dgvOrdenesTrabajo.Size = new System.Drawing.Size(1552, 538);
+            this.dgvOrdenesTrabajo.TabIndex = 203;
             // 
             // btn_limpiar
             // 
             this.btn_limpiar.Location = new System.Drawing.Point(1193, 146);
-            this.btn_limpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_limpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_limpiar.Name = "btn_limpiar";
             this.btn_limpiar.Size = new System.Drawing.Size(100, 28);
             this.btn_limpiar.TabIndex = 202;
@@ -315,7 +252,7 @@
             // btn_aplicar
             // 
             this.btn_aplicar.Location = new System.Drawing.Point(1085, 146);
-            this.btn_aplicar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_aplicar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_aplicar.Name = "btn_aplicar";
             this.btn_aplicar.Size = new System.Drawing.Size(100, 28);
             this.btn_aplicar.TabIndex = 201;
@@ -395,15 +332,16 @@
             this.Txt_Dni.Size = new System.Drawing.Size(639, 25);
             this.Txt_Dni.TabIndex = 194;
             // 
-            // btn_editar
+            // btnAsignar
             // 
-            this.btn_editar.Location = new System.Drawing.Point(1559, 203);
-            this.btn_editar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(100, 28);
-            this.btn_editar.TabIndex = 204;
-            this.btn_editar.Text = "Editar";
-            this.btn_editar.UseVisualStyleBackColor = true;
+            this.btnAsignar.Location = new System.Drawing.Point(1557, 198);
+            this.btnAsignar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAsignar.Name = "btnAsignar";
+            this.btnAsignar.Size = new System.Drawing.Size(100, 28);
+            this.btnAsignar.TabIndex = 204;
+            this.btnAsignar.Text = "Asignar";
+            this.btnAsignar.UseVisualStyleBackColor = true;
+            this.btnAsignar.Click += new System.EventHandler(this.btnAsignar_Click);
             // 
             // btn_buscar
             // 
@@ -412,19 +350,51 @@
             this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_buscar.ForeColor = System.Drawing.Color.Gray;
             this.btn_buscar.Location = new System.Drawing.Point(1271, 84);
-            this.btn_buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_buscar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(60, 36);
             this.btn_buscar.TabIndex = 195;
             this.btn_buscar.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(1679, 197);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(100, 28);
+            this.btnCancelar.TabIndex = 205;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1141, 200);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 25);
+            this.label3.TabIndex = 206;
+            this.label3.Text = "Trabajador:";
+            // 
+            // cmbTrabajador
+            // 
+            this.cmbTrabajador.FormattingEnabled = true;
+            this.cmbTrabajador.Location = new System.Drawing.Point(1271, 201);
+            this.cmbTrabajador.Name = "cmbTrabajador";
+            this.cmbTrabajador.Size = new System.Drawing.Size(263, 24);
+            this.cmbTrabajador.TabIndex = 207;
             // 
             // G_OrdenTrabajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1899, 814);
-            this.Controls.Add(this.btn_editar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.cmbTrabajador);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAsignar);
+            this.Controls.Add(this.dgvOrdenesTrabajo);
             this.Controls.Add(this.btn_limpiar);
             this.Controls.Add(this.btn_aplicar);
             this.Controls.Add(this.textBox1);
@@ -440,8 +410,9 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "G_OrdenTrabajo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.G_OrdenTrabajo_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenesTrabajo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,7 +428,7 @@
         private System.Windows.Forms.Button btn_proyectos;
         private System.Windows.Forms.Button btn_formatos;
         private System.Windows.Forms.Button btn_os;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvOrdenesTrabajo;
         private System.Windows.Forms.Button btn_limpiar;
         private System.Windows.Forms.Button btn_aplicar;
         private System.Windows.Forms.TextBox textBox1;
@@ -467,14 +438,10 @@
         private System.Windows.Forms.ComboBox Estado;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.TextBox Txt_Dni;
-        private System.Windows.Forms.Button btn_editar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button btnAsignar;
         private System.Windows.Forms.Button btn_facturas;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbTrabajador;
     }
 }

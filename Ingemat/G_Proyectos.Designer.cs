@@ -46,11 +46,12 @@
             this.BTinicio = new System.Windows.Forms.Button();
             this.btn_aplicar = new System.Windows.Forms.Button();
             this.btn_limpiar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btn_ver = new System.Windows.Forms.Button();
+            this.dgvProyectos = new System.Windows.Forms.DataGridView();
+            this.btnVer = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
+            this.btnIniciar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProyectos)).BeginInit();
             this.SuspendLayout();
             // 
             // Txt_Dni
@@ -296,7 +297,7 @@
             this.BTinicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTinicio.ForeColor = System.Drawing.Color.White;
             this.BTinicio.Location = new System.Drawing.Point(11, 15);
-            this.BTinicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTinicio.Margin = new System.Windows.Forms.Padding(4);
             this.BTinicio.Name = "BTinicio";
             this.BTinicio.Size = new System.Drawing.Size(244, 188);
             this.BTinicio.TabIndex = 9;
@@ -305,7 +306,7 @@
             // btn_aplicar
             // 
             this.btn_aplicar.Location = new System.Drawing.Point(979, 148);
-            this.btn_aplicar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_aplicar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_aplicar.Name = "btn_aplicar";
             this.btn_aplicar.Size = new System.Drawing.Size(94, 29);
             this.btn_aplicar.TabIndex = 175;
@@ -315,32 +316,32 @@
             // btn_limpiar
             // 
             this.btn_limpiar.Location = new System.Drawing.Point(1080, 148);
-            this.btn_limpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_limpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_limpiar.Name = "btn_limpiar";
             this.btn_limpiar.Size = new System.Drawing.Size(94, 29);
             this.btn_limpiar.TabIndex = 176;
             this.btn_limpiar.Text = "Limpiar";
             this.btn_limpiar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvProyectos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(364, 201);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1330, 528);
-            this.dataGridView1.TabIndex = 177;
+            this.dgvProyectos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProyectos.Location = new System.Drawing.Point(364, 201);
+            this.dgvProyectos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvProyectos.Name = "dgvProyectos";
+            this.dgvProyectos.RowHeadersWidth = 51;
+            this.dgvProyectos.Size = new System.Drawing.Size(1330, 528);
+            this.dgvProyectos.TabIndex = 177;
             // 
-            // btn_ver
+            // btnVer
             // 
-            this.btn_ver.Location = new System.Drawing.Point(1571, 151);
-            this.btn_ver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_ver.Name = "btn_ver";
-            this.btn_ver.Size = new System.Drawing.Size(94, 29);
-            this.btn_ver.TabIndex = 180;
-            this.btn_ver.Text = "Ver";
-            this.btn_ver.UseVisualStyleBackColor = true;
+            this.btnVer.Location = new System.Drawing.Point(1571, 151);
+            this.btnVer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(94, 29);
+            this.btnVer.TabIndex = 180;
+            this.btnVer.Text = "Ver";
+            this.btnVer.UseVisualStyleBackColor = true;
             // 
             // btn_buscar
             // 
@@ -349,11 +350,22 @@
             this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_buscar.ForeColor = System.Drawing.Color.Gray;
             this.btn_buscar.Location = new System.Drawing.Point(1152, 84);
-            this.btn_buscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_buscar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(56, 36);
             this.btn_buscar.TabIndex = 59;
             this.btn_buscar.UseVisualStyleBackColor = false;
+            // 
+            // btnIniciar
+            // 
+            this.btnIniciar.Location = new System.Drawing.Point(1444, 151);
+            this.btnIniciar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIniciar.Name = "btnIniciar";
+            this.btnIniciar.Size = new System.Drawing.Size(94, 29);
+            this.btnIniciar.TabIndex = 181;
+            this.btnIniciar.Text = "Iniciar";
+            this.btnIniciar.UseVisualStyleBackColor = true;
+            this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
             // G_Proyectos
             // 
@@ -363,8 +375,9 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1780, 826);
-            this.Controls.Add(this.btn_ver);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnIniciar);
+            this.Controls.Add(this.btnVer);
+            this.Controls.Add(this.dgvProyectos);
             this.Controls.Add(this.btn_limpiar);
             this.Controls.Add(this.btn_aplicar);
             this.Controls.Add(this.panel1);
@@ -380,8 +393,9 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "G_Proyectos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Load += new System.EventHandler(this.V_Proyectos_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProyectos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,9 +420,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_aplicar;
         private System.Windows.Forms.Button btn_limpiar;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btn_ver;
+        private System.Windows.Forms.DataGridView dgvProyectos;
+        private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btn_facturas;
+        private System.Windows.Forms.Button btnIniciar;
     }
 }
 

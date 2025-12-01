@@ -138,5 +138,34 @@ namespace CapaDatos
             }
             return emp;
         }
+        public List<entEmpleado> ListarAyudantesTecnicos()
+        {
+            List<entEmpleado> lista = new List<entEmpleado>();
+            try
+            {
+                using (SqlConnection conn = Conexion.Instancia.Conectar())
+                {
+                    conn.Open();
+                    string query = "SELECT IdEmpleado, NombreEmpleado FROM dbo.Empleado WHERE Cargo = 'Ayudante Tecnico' AND Estado = 1";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        lista.Add(new entEmpleado
+                        {
+                            IdEmpleado = Convert.ToInt32(reader["IdEmpleado"]),
+                            NombreEmpleado = reader["NombreEmpleado"].ToString()
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al listar ayudantes: " + ex.Message);
+            }
+            return lista;
+        }
     }
 }

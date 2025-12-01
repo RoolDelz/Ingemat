@@ -1,4 +1,5 @@
-﻿using CapaEntidad;
+﻿using CapaDatos;
+using CapaEntidad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,68 +10,58 @@ namespace CapaLogica
 {
     public class logLogin
     {
+        private datEmpleado datosEmpleado = new datEmpleado();
+
         private const string PASS_GERENTE = "admin123";
         private const string PASS_VENTAS = "ventas123";
         private const string PASS_TECNICO = "tecnico123";
 
-        public bool ValidarLogin(string nombreCompleto, string password)
+        public bool ValidarLogin(string dni, string password)
         {
-            string cargo = "";
-            bool accesoConcedido = false;
-
-
-            switch (nombreCompleto)
+            try
             {
-                // Gerente
-                case "Juan Pérez Gómez":
-                    cargo = "Gerente";
-                    break;
+                entEmpleado emp = datosEmpleado.BuscarEmpleadoPorDni(dni);
 
-                // Vendedores
-                case "María López Torres":
-                case "Carlos Ruiz Soto":
-                case "Ana Díaz Vargas":
-                    cargo = "Area de ventas";
-                    break;
+                if (emp == null)
+                {
+                    throw new Exception("El DNI ingresado no existe en el sistema.");
+                }
+                if (!emp.Estado)
+                {
+                    throw new Exception("El usuario se encuentra INACTIVO. Contacte al administrador.");
+                }
+                bool passCorrecta = false;
 
-                // Técnicos
-                case "Pedro Salas Cueva":
-                case "Luisa Vidal Reyes":
-                case "Jorge Mendoza Huamán":
-                    cargo = "Ayudante Tecnico";
-                    break;
-
-                default:
-                    cargo = ""; 
-                    break;
+                switch (emp.Cargo)
+                {
+                    case "Gerente":
+                        passCorrecta = (password == PASS_GERENTE);
+                        break;
+                    case "Area de ventas":
+                        passCorrecta = (password == PASS_VENTAS);
+                        break;
+                    case "Ayudante Tecnico":
+                        passCorrecta = (password == PASS_TECNICO);
+                        break;
+                    default:
+                        throw new Exception($"El cargo '{emp.Cargo}' no tiene permisos de acceso configurados.");
+                }
+                if (passCorrecta)
+                {
+                    entSession.IdEmpleado = emp.IdEmpleado;
+                    entSession.NombreEmpleado = emp.NombreEmpleado;
+                    entSession.Cargo = emp.Cargo;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-
-            if (string.IsNullOrEmpty(cargo))
+            catch (Exception ex)
             {
-                return false; 
+                throw ex;
             }
-
-            switch (cargo)
-            {
-                case "Gerente":
-                    accesoConcedido = (password == PASS_GERENTE);
-                    break;
-                case "Area de ventas":
-                    accesoConcedido = (password == PASS_VENTAS);
-                    break;
-                case "Ayudante Tecnico":
-                    accesoConcedido = (password == PASS_TECNICO);
-                    break;
-            }
-
-            if (accesoConcedido)
-            {
-                entSession.NombreEmpleado = nombreCompleto;
-                entSession.Cargo = cargo;
-                return true;
-            }
-
-            return false;
         }
     }
 }

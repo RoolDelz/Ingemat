@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="entCliente.cs" />
+    <Compile Include="entDetalleOT.cs" />
     <Compile Include="entEmpleado.cs" />
     <Compile Include="entEmpresa.cs" />
     <Compile Include="entFactura.cs" />
@@ -49,9 +50,13 @@
     <Compile Include="entGastoProf.cs" />
     <Compile Include="entOrdenServicio.cs" />
     <Compile Include="entOrdenServicioVista.cs" />
+    <Compile Include="entOrdenTrabajo.cs" />
+    <Compile Include="entOrdenTrabajoVista.cs" />
     <Compile Include="entProforma.cs" />
     <Compile Include="entProformaVista.cs" />
     <Compile Include="entProyecto.cs" />
+    <Compile Include="entProyectoVista.cs" />
+    <Compile Include="entReporte.cs" />
     <Compile Include="entSession.cs" />
     <Compile Include="entSubFormato.cs" />
     <Compile Include="entFormatos.cs" />

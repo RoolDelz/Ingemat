@@ -50,9 +50,11 @@
     <Compile Include="logGastoAdicional.cs" />
     <Compile Include="logLogin.cs" />
     <Compile Include="logOrdenServicio.cs" />
+    <Compile Include="logOrdenTrabajo.cs" />
     <Compile Include="logProforma.cs" />
     <Compile Include="logProformaVista.cs" />
     <Compile Include="logProyecto.cs" />
+    <Compile Include="logReporte.cs" />
     <Compile Include="logSubformatos.cs" />
     <Compile Include="logTipoGasto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

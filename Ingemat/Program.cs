@@ -18,43 +18,33 @@ namespace Ingemat
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // 1. Creamos el formulario de login
             Login loginForm = new Login();
 
-            // 2. Mostramos el login como un diálogo modal.
-            // La aplicación se detiene aquí hasta que loginForm se cierre.
             if (loginForm.ShowDialog() == DialogResult.OK)
             {
-                // 3. Si el login fue exitoso (DialogResult.OK),
-                //    leemos el cargo que se guardó en la Sesión.
                 string cargo = entSession.Cargo;
                 Form formularioPrincipal = null;
 
-                // 4. Determinamos qué formulario principal abrir
                 switch (cargo)
                 {
                     case "Gerente":
-                        formularioPrincipal = new G_Proyectos(); // Se abre G_Proyectos
+                        formularioPrincipal = new G_Proyectos();
                         break;
                     case "Area de ventas":
-                        formularioPrincipal = new V_Proformas(); // Se abre V_Proformas
+                        formularioPrincipal = new V_Proformas();
                         break;
                     case "Ayudante Tecnico":
-                        formularioPrincipal = new T_Actividades(); // Se abre T_Actividades
+                        formularioPrincipal = new T_Actividades();
                         break;
                     default:
-                        // Seguridad por si algo falla
-                        MessageBox.Show("Error: Cargo no reconocido. Saliendo.");
+                        MessageBox.Show($"El cargo '{cargo}' no tiene un formulario asignado.", "Error");
                         Application.Exit();
                         return;
                 }
-
-                // 5. Iniciamos la aplicación con el formulario principal correcto.
                 Application.Run(formularioPrincipal);
             }
             else
             {
-                // 6. Si el login se cancela o falla, la app no inicia.
                 Application.Exit();
             }
         }

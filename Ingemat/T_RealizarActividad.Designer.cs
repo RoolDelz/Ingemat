@@ -28,41 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BTinicio = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.btn_actividades = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_regresar = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnRegresar = new System.Windows.Forms.Button();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_guardar = new System.Windows.Forms.Button();
-            this.btn_editar = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.txtFormato = new System.Windows.Forms.TextBox();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtActividad = new System.Windows.Forms.TextBox();
+            this.txtProyecto = new System.Windows.Forms.TextBox();
+            this.dgvReportes = new System.Windows.Forms.DataGridView();
+            this.btnSubirArchivo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(664, 123);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(301, 23);
-            this.textBox2.TabIndex = 387;
             // 
             // label4
             // 
@@ -82,7 +73,6 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.BTinicio);
             this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.btn_actividades);
             this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
@@ -100,7 +90,7 @@
             this.BTinicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTinicio.ForeColor = System.Drawing.Color.White;
             this.BTinicio.Location = new System.Drawing.Point(12, 15);
-            this.BTinicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTinicio.Margin = new System.Windows.Forms.Padding(4);
             this.BTinicio.Name = "BTinicio";
             this.BTinicio.Size = new System.Drawing.Size(260, 185);
             this.BTinicio.TabIndex = 9;
@@ -124,24 +114,6 @@
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // btn_actividades
-            // 
-            this.btn_actividades.BackColor = System.Drawing.Color.Transparent;
-            this.btn_actividades.FlatAppearance.BorderSize = 0;
-            this.btn_actividades.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_actividades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_actividades.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_actividades.ForeColor = System.Drawing.Color.White;
-            this.btn_actividades.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_actividades.Location = new System.Drawing.Point(12, 251);
-            this.btn_actividades.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_actividades.Name = "btn_actividades";
-            this.btn_actividades.Size = new System.Drawing.Size(265, 59);
-            this.btn_actividades.TabIndex = 2;
-            this.btn_actividades.Text = "Actividades";
-            this.btn_actividades.UseVisualStyleBackColor = false;
-            this.btn_actividades.Click += new System.EventHandler(this.btn_actividades_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -154,38 +126,15 @@
             this.label3.TabIndex = 389;
             this.label3.Text = "Realizar Actividad";
             // 
-            // comboBox5
+            // txtDireccion
             // 
-            this.comboBox5.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(619, 91);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(723, 24);
-            this.comboBox5.TabIndex = 393;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(511, 126);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(157, 23);
-            this.label29.TabIndex = 392;
-            this.label29.Text = "Departamento:";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(1079, 123);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(332, 23);
-            this.textBox1.TabIndex = 391;
+            this.txtDireccion.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtDireccion.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccion.Location = new System.Drawing.Point(631, 126);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(492, 23);
+            this.txtDireccion.TabIndex = 391;
             // 
             // label14
             // 
@@ -193,7 +142,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(971, 123);
+            this.label14.Location = new System.Drawing.Point(515, 126);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(110, 23);
             this.label14.TabIndex = 390;
@@ -226,30 +175,32 @@
             this.label5.Text = "Categoria:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btn_regresar
+            // btnRegresar
             // 
-            this.btn_regresar.BackColor = System.Drawing.Color.Olive;
-            this.btn_regresar.FlatAppearance.BorderSize = 0;
-            this.btn_regresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_regresar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_regresar.ForeColor = System.Drawing.Color.White;
-            this.btn_regresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_regresar.Location = new System.Drawing.Point(295, 11);
-            this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(152, 39);
-            this.btn_regresar.TabIndex = 476;
-            this.btn_regresar.Text = "Regresar";
-            this.btn_regresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.BackColor = System.Drawing.Color.Olive;
+            this.btnRegresar.FlatAppearance.BorderSize = 0;
+            this.btnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegresar.Location = new System.Drawing.Point(295, 11);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(152, 39);
+            this.btnRegresar.TabIndex = 476;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // dateTimePicker1
+            // dtpFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(621, 222);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(265, 22);
-            this.dateTimePicker1.TabIndex = 478;
+            this.dtpFecha.Enabled = false;
+            this.dtpFecha.Location = new System.Drawing.Point(621, 222);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(265, 22);
+            this.dtpFecha.TabIndex = 478;
             // 
             // label15
             // 
@@ -264,15 +215,6 @@
             this.label15.Text = "Fecha:";
             this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(520, 304);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(1128, 381);
-            this.textBox3.TabIndex = 479;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -286,135 +228,201 @@
             this.label2.Text = "Reporte:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btn_guardar
+            // btnGuardar
             // 
-            this.btn_guardar.BackColor = System.Drawing.Color.Olive;
-            this.btn_guardar.FlatAppearance.BorderSize = 0;
-            this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guardar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_guardar.ForeColor = System.Drawing.Color.White;
-            this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_guardar.Location = new System.Drawing.Point(1471, 726);
-            this.btn_guardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(152, 39);
-            this.btn_guardar.TabIndex = 481;
-            this.btn_guardar.Text = "Guardar";
-            this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.BackColor = System.Drawing.Color.Olive;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(1480, 726);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(152, 39);
+            this.btnGuardar.TabIndex = 481;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btn_editar
+            // btnEditar
             // 
-            this.btn_editar.BackColor = System.Drawing.Color.Olive;
-            this.btn_editar.FlatAppearance.BorderSize = 0;
-            this.btn_editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_editar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_editar.ForeColor = System.Drawing.Color.White;
-            this.btn_editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_editar.Location = new System.Drawing.Point(1295, 726);
-            this.btn_editar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(152, 39);
-            this.btn_editar.TabIndex = 482;
-            this.btn_editar.Text = "Editar";
-            this.btn_editar.UseVisualStyleBackColor = false;
+            this.btnEditar.BackColor = System.Drawing.Color.Olive;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(1305, 726);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(152, 39);
+            this.btnEditar.TabIndex = 482;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // textBox4
+            // txtCategoria
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(631, 161);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(301, 23);
-            this.textBox4.TabIndex = 483;
+            this.txtCategoria.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtCategoria.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCategoria.Location = new System.Drawing.Point(631, 161);
+            this.txtCategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(423, 23);
+            this.txtCategoria.TabIndex = 483;
             // 
-            // textBox5
+            // txtFormato
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(611, 188);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(301, 23);
-            this.textBox5.TabIndex = 484;
+            this.txtFormato.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtFormato.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFormato.Location = new System.Drawing.Point(611, 188);
+            this.txtFormato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFormato.Name = "txtFormato";
+            this.txtFormato.Size = new System.Drawing.Size(348, 23);
+            this.txtFormato.TabIndex = 484;
             // 
-            // button1
+            // btnFinalizar
             // 
-            this.button1.BackColor = System.Drawing.Color.Olive;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1657, 726);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 39);
-            this.button1.TabIndex = 485;
-            this.button1.Text = "Ya";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnFinalizar.BackColor = System.Drawing.Color.Olive;
+            this.btnFinalizar.FlatAppearance.BorderSize = 0;
+            this.btnFinalizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.ForeColor = System.Drawing.Color.White;
+            this.btnFinalizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFinalizar.Location = new System.Drawing.Point(1657, 726);
+            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(152, 39);
+            this.btnFinalizar.TabIndex = 485;
+            this.btnFinalizar.Text = "Fiinalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = false;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(975, 192);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 23);
+            this.label6.TabIndex = 486;
+            this.label6.Text = "Actividad:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtActividad
+            // 
+            this.txtActividad.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtActividad.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtActividad.Location = new System.Drawing.Point(1091, 192);
+            this.txtActividad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtActividad.Name = "txtActividad";
+            this.txtActividad.Size = new System.Drawing.Size(532, 23);
+            this.txtActividad.TabIndex = 487;
+            // 
+            // txtProyecto
+            // 
+            this.txtProyecto.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtProyecto.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProyecto.Location = new System.Drawing.Point(618, 95);
+            this.txtProyecto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtProyecto.Name = "txtProyecto";
+            this.txtProyecto.Size = new System.Drawing.Size(787, 23);
+            this.txtProyecto.TabIndex = 488;
+            // 
+            // dgvReportes
+            // 
+            this.dgvReportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReportes.Location = new System.Drawing.Point(519, 303);
+            this.dgvReportes.Name = "dgvReportes";
+            this.dgvReportes.RowHeadersWidth = 51;
+            this.dgvReportes.RowTemplate.Height = 24;
+            this.dgvReportes.Size = new System.Drawing.Size(1241, 390);
+            this.dgvReportes.TabIndex = 489;
+            // 
+            // btnSubirArchivo
+            // 
+            this.btnSubirArchivo.BackColor = System.Drawing.Color.Olive;
+            this.btnSubirArchivo.FlatAppearance.BorderSize = 0;
+            this.btnSubirArchivo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSubirArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubirArchivo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubirArchivo.ForeColor = System.Drawing.Color.White;
+            this.btnSubirArchivo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubirArchivo.Location = new System.Drawing.Point(1091, 726);
+            this.btnSubirArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSubirArchivo.Name = "btnSubirArchivo";
+            this.btnSubirArchivo.Size = new System.Drawing.Size(188, 39);
+            this.btnSubirArchivo.TabIndex = 490;
+            this.btnSubirArchivo.Text = "Subir Archivo";
+            this.btnSubirArchivo.UseVisualStyleBackColor = false;
+            this.btnSubirArchivo.Click += new System.EventHandler(this.btnSubirArchivo_Click);
             // 
             // T_RealizarActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1899, 814);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.btn_editar);
-            this.Controls.Add(this.btn_guardar);
+            this.Controls.Add(this.btnSubirArchivo);
+            this.Controls.Add(this.dgvReportes);
+            this.Controls.Add(this.txtProyecto);
+            this.Controls.Add(this.txtActividad);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnFinalizar);
+            this.Controls.Add(this.txtFormato);
+            this.Controls.Add(this.txtCategoria);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.btn_regresar);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.label29);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "T_RealizarActividad";
+            this.Load += new System.EventHandler(this.T_RealizarActividad_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReportes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button BTinicio;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button btn_actividades;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btn_regresar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.Button btn_editar;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.TextBox txtFormato;
+        private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtActividad;
+        private System.Windows.Forms.TextBox txtProyecto;
+        private System.Windows.Forms.DataGridView dgvReportes;
+        private System.Windows.Forms.Button btnSubirArchivo;
     }
 }

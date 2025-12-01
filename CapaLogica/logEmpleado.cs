@@ -45,5 +45,9 @@ namespace CapaLogica
             }
             return datos.BuscarEmpleadoPorDni(dni);
         }
+        public List<entEmpleado> ListarAyudantesActivos()
+        {
+            return datos.ListarAyudantesTecnicos();
+        }
     }
 }

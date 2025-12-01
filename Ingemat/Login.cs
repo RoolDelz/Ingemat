@@ -15,6 +15,7 @@ namespace Ingemat
     public partial class Login : Form
     {
         private logLogin logicaLogin = new logLogin();
+
         public Login()
         {
             InitializeComponent();
@@ -22,21 +23,34 @@ namespace Ingemat
 
         private void btn_iniciarSesion_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text;
-            string password = txtPassword.Text;
+            string dni = txtUsuario.Text.Trim();
+            string password = txtPassword.Text.Trim();
 
-            bool exito = logicaLogin.ValidarLogin(usuario, password);
-
-            if (exito)
+            if (string.IsNullOrEmpty(dni) || string.IsNullOrEmpty(password))
             {
-
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                MessageBox.Show("Por favor ingrese DNI y contraseña.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else
+
+            try
             {
-                MessageBox.Show("Usuario o contraseña incorrectos.", "Error de Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.DialogResult = DialogResult.None;
+                bool exito = logicaLogin.ValidarLogin(dni, password);
+
+                if (exito)
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Contraseña incorrecta.", "Error de Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPassword.Clear();
+                    txtPassword.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error de Acceso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
